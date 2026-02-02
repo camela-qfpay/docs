@@ -18,64 +18,52 @@
         }
       ]
     },
-    "tabs": [
+    "languages": [
       {
-        "tab": "Home",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "Getting Started",
-            "pages": [
-              "quickstart",
-              "development"
+            "tab": "Home",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": ["quickstart", "development"]
+              }
             ]
           },
           {
-            "group": "Essentials",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI Tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+            "tab": "Integration",
+            "groups": [
+              {
+                "group": "Preparation",
+                "pages": ["environments"]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Integration",
-        "groups": [
+        "language": "zh-Hant",
+        "tabs": [
           {
-            "group": "Preparation",
-            "pages": [
-              "environments",
+            "tab": "首頁",
+            "groups": [
               {
-                "group": "zh-Hant",
-                "pages": [
-                  "integration/preparation/zh-hant/untitled-page"
-                ]
+                "group": "開始使用",
+                "pages": ["zh-hant/quickstart", "zh-hant/development"]
               }
             ]
           },
           {
-            "group": "API Reference",
-            "pages": [
-              "api-reference/introduction",
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+            "tab": "整合",
+            "groups": [
+              {
+                "group": "準備事項",
+                "pages": ["zh-hant/environments"]
+              }
             ]
           }
-        ]
+          ]
       }
     ]
   },
