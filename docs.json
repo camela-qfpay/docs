@@ -56,7 +56,13 @@
           {
             "group": "Preparation",
             "pages": [
-              "environments"
+              "environments",
+              {
+                "group": "zh-Hant",
+                "pages": [
+                  "integration/preparation/zh-hant/untitled-page"
+                ]
+              }
             ]
           },
           {
