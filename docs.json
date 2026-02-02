@@ -96,6 +96,9 @@
       "href": "https://dashboard.mintlify.com"
     }
   },
+  "ai": {
+    "enabled": true
+  },
   "contextual": {
     "options": [
      "copy",
