@@ -12,45 +12,28 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
+          "anchor": "QFPay Website",
           "icon": "book-open-cover",
-          "href": "https://mintlify.com/docs"
-        },
-        {
-          "anchor": "Blog",
-          "icon": "newspaper",
-          "href": "https://mintlify.com/blog"
+          "href": "https://www.qfpay.global"
         }
       ]
     },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Home",
         "groups": [
           {
-            "group": "Preparation",
+            "group": "Getting Started",
             "pages": [
-              "environments",
-              {
-                "group": "zh-Hant",
-                "pages": [
-                  "guides/preparation/zh/envrionments"
-                ]
-              },
               "quickstart",
               "development"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Essentials",
             "pages": [
               "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
+              "essentials/navigation",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
@@ -58,7 +41,7 @@
             ]
           },
           {
-            "group": "AI tools",
+            "group": "AI Tools",
             "pages": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
@@ -68,17 +51,18 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Integration",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Preparation",
             "pages": [
-              "api-reference/introduction"
+              "environments"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "API Reference",
             "pages": [
+              "api-reference/introduction",
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
               "api-reference/endpoint/delete",
