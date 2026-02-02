@@ -32,7 +32,7 @@
             "pages": [
               "environments",
               {
-                "group": "zh",
+                "group": "zh-Hant",
                 "pages": [
                   "guides/preparation/zh/envrionments"
                 ]
