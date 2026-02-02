@@ -33,7 +33,9 @@
               "environments",
               {
                 "group": "zh",
-                "pages": []
+                "pages": [
+                  "guides/preparation/zh/envrionments"
+                ]
               },
               "quickstart",
               "development"
