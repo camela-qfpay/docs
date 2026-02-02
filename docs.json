@@ -59,7 +59,7 @@
             "groups": [
               {
                 "group": "準備事項",
-                "pages": ["zh-hant/environments"]
+                "pages": ["integration/preparation/zh-hant/environments"]
               }
             ]
           }
