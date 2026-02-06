@@ -80,89 +80,89 @@ X-QF-SIGN: <your_hashed_signature>
 
 For code instructions select Python, Java, Node.js or PHP with the tabs below.
 
-<Tabs>
-  <Tab title="Tab">
-    ```python
-    # Create signature
-    def make_req_sign(data, key):
-        keys = list(data.keys())
-        keys.sort()
-        p = []
-        for k in keys:
-            v = data[k]
-            p.append('%s=%s'%(k,v))
-        unsign_str = ('&'.join(p) + key).encode("utf-8")
-        s = hashlib.md5(unsign_str).hexdigest()
-        return s.upper()
-    ```
-  </Tab>
-  <Tab title="Tab">
-    ```java
-    public class QFPayUtils {
-        public static String getMd5Value(String input) {
-            try {
-                java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-                byte[] array = md.digest(input.getBytes("UTF-8"));
-                StringBuffer sb = new StringBuffer();
-                for (int i = 0; i < array.length; i++) {
-                    sb.append(String.format("%02x", array[i]));
-                }
-                return sb.toString().toUpperCase();
-            } catch (Exception e) {
-                return null;
+<CodeGroup>
+
+```python Python
+# Create signature
+def make_req_sign(data, key):
+    keys = list(data.keys())
+    keys.sort()
+    p = []
+    for k in keys:
+        v = data[k]
+        p.append('%s=%s'%(k,v))
+    unsign_str = ('&'.join(p) + key).encode("utf-8")
+    s = hashlib.md5(unsign_str).hexdigest()
+    return s.upper()
+```
+
+
+```java Java
+public class QFPayUtils {
+    public static String getMd5Value(String input) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+            byte[] array = md.digest(input.getBytes("UTF-8"));
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < array.length; i++) {
+                sb.append(String.format("%02x", array[i]));
             }
+            return sb.toString().toUpperCase();
+        } catch (Exception e) {
+            return null;
         }
     }
-    ```
-  </Tab>
-  <Tab title="Tab">
-    ```javascript
-    const crypto = require("crypto");
-    
-    const payload = {
-      txamt: "10",
-      txcurrcd: "HKD",
-      pay_type: "800101",
-      out_trade_no: "ORDER12345",
-      txdtm: "2025-11-17 18:00:00",
-      mchid: "ZaMVg*****",
-    };
-    
-    const key = "client_key_here";
-    const ordered = Object.keys(payload).sort().map(k => `${k}=${payload[k]}`).join("&");
-    const signString = ordered + key;
-    const signature = crypto.createHash("md5").update(signString).digest("hex").toUpperCase();
-    console.log(signature);
-    ```
-  </Tab>
-  <Tab title="Tab">
-    ```php
-    <?php
-    function generateSignature($fields, $key) {
-        ksort($fields);
-        $str = '';
-        foreach ($fields as $k => $v) {
-            $str .= $k . '=' . $v . '&';
-        }
-        $str = rtrim($str, '&') . $key;
-        return strtoupper(md5($str));
+}
+```
+
+
+```javascript Javascript
+const crypto = require("crypto");
+
+const payload = {
+  txamt: "10",
+  txcurrcd: "HKD",
+  pay_type: "800101",
+  out_trade_no: "ORDER12345",
+  txdtm: "2025-11-17 18:00:00",
+  mchid: "ZaMVg*****",
+};
+
+const key = "client_key_here";
+const ordered = Object.keys(payload).sort().map(k => `${k}=${payload[k]}`).join("&");
+const signString = ordered + key;
+const signature = crypto.createHash("md5").update(signString).digest("hex").toUpperCase();
+console.log(signature);
+```
+
+
+```php PHP
+<?php
+function generateSignature($fields, $key) {
+    ksort($fields);
+    $str = '';
+    foreach ($fields as $k => $v) {
+        $str .= $k . '=' . $v . '&';
     }
-    
-    $fields = array(
-        'pay_type' => '800101',
-        'out_trade_no' => 'ORDER12345',
-        'txcurrcd' => 'HKD',
-        'txamt' => '2200',
-        'txdtm' => '2025-11-17 18:00:00',
-        'mchid' => 'ZaMVg*****'
-    );
-    
-    $signature = generateSignature($fields, 'client_key_here');
-    echo $signature;
-    ?>
-    ```
-  </Tab>
-</Tabs>
+    $str = rtrim($str, '&') . $key;
+    return strtoupper(md5($str));
+}
+
+$fields = array(
+    'pay_type' => '800101',
+    'out_trade_no' => 'ORDER12345',
+    'txcurrcd' => 'HKD',
+    'txamt' => '2200',
+    'txdtm' => '2025-11-17 18:00:00',
+    'mchid' => 'ZaMVg*****'
+);
+
+$signature = generateSignature($fields, 'client_key_here');
+echo $signature;
+?>
+```
+
+</CodeGroup>
 
 > The above command returns JSON structured like this:
 
