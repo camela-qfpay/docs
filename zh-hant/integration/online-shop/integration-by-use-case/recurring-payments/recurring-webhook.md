@@ -1,13 +1,7 @@
 ---
-id: recurring-webhook
 title: 訂閱支付 Webhook（定期付款通知）
 description: 本文件說明 QFPay 訂閱支付（定期付款）的 Webhook 非同步通知機制，包含支付令牌建立、訂閱狀態變更，以及定期扣款結果通知。
-sidebar_label: Webhook 通知
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
 
 # 訂閱支付 Webhook（定期付款通知）
 
@@ -19,12 +13,12 @@ import Link from '@docusaurus/Link';
 
 ## 如何設定通知 URL
 
-:::note
+<Note>
 如需設定 Webhook 接收端點，請將以下資訊寄送至 `technical.support@qfpay.com`：
 - Webhook URL
 - 商戶 ID
 - 門店 ID
-:::
+</Note>
 
 ---
 
@@ -144,10 +138,10 @@ import Link from '@docusaurus/Link';
 
 ## 範例
 
-:::tip
+<Tip>
 請確保您的 Webhook 接收端具備**冪等性（Idempotency）**設計。
 在通知傳送失敗時，相同事件可能會被重複發送。
-:::
+</Tip>
 
 若接收端未回傳 **HTTP 200 OK**，系統將自動重試通知。
 
