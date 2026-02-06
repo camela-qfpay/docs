@@ -1,27 +1,14 @@
 ---
-id: recurring-integration-guide
-title: Integration Guide for Recurring Payments
-description: Developer guide for integrating recurring payment features, including setup flow, data model, and best practices.
-sidebar_label: Integration Guide
---------------------------------
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
-
-# Integration Guide for Recurring Payments
-
-This guide provides a step-by-step approach for integrating QFPay's Recurring Payments solution, including prerequisites, API sequence, and best practices for live environments.
-
+title: "Integration Guide for Recurring Payments"
 ---
 
 ## Prerequisites
 
 Before you begin integration, ensure the following:
 
-* You have API credentials (`AppCode`, `AppKey`) for your environment.
-* Your notify URL has been configured with QFPay for receiving asynchronous webhook notifications.
-* Your frontend supports rendering and submitting [Payment Element](/docs/online-shop/checkout-integration/payment-element).
+- You have API credentials (`AppCode`, `AppKey`) for your environment.
+- Your notify URL has been configured with QFPay for receiving asynchronous webhook notifications.
+- Your frontend supports rendering and submitting [Payment Element](/docs/online-shop/checkout-integration/payment-element).
 
 ---
 
@@ -32,7 +19,7 @@ The complete recurring payment integration consists of the following steps:
 1. **Set up webhook endpoint** to receive `payment_token`, `subscription`, and `subscription_payment` notifications.
 2. **Create Customer** object and obtain `customer_id`.
 3. **Render Payment Element** in frontend to create token using `payment.pay()` and `customer_id`.
-4. **Capture the `token_id`** from webhook notification or token API response.
+4. **`Capture the token_id`** from webhook notification or token API response.
 5. **Create Product** object to define billing amount, frequency, and interval.
 6. **Create Subscription** with `customer_id`, `token_id`, and `product_id`.
 7. (Optional) Monitor subscription status via webhook or [Query API](/docs/recurring-api-reference#query-subscription).
@@ -42,22 +29,17 @@ The complete recurring payment integration consists of the following steps:
 ---
 
 ## Best Practices
-:::note
-Use [Query API](/docs/recurring-api-reference#query-subscription) for  syncing subscription states to your CRM.
-:::
 
-:::tip
-After each subscription creation, confirm receipt of webhook with `ACTIVE` or `INCOMPLETE` state to ensure it was created successfully.
-:::
+:::note Use [Query API](/docs/recurring-api-reference#query-subscription) for  syncing subscription states to your CRM. :::
 
-:::warning
-Always store `subscription_id` and `token_id` in your database for tracking and later billing actions such as retry, cancellation, or reporting.
-:::
+:::tip After each subscription creation, confirm receipt of webhook with `ACTIVE` or `INCOMPLETE` state to ensure it was created successfully. :::
+
+:::warning Always store `subscription_id` and `token_id` in your database for tracking and later billing actions such as retry, cancellation, or reporting. :::
 
 ---
 
 ## Next Steps
 
-* [Recurring API Reference](/docs/recurring-api-reference)
-* [Webhook Reference](/docs/recurring-webhook)
-* [Element SDK Integration](/docs/online-shop/checkout-integration/payment-element)
+- [Recurring API Reference](/docs/recurring-api-reference)
+- [Webhook Reference](/docs/recurring-webhook)
+- [Element SDK Integration](/docs/online-shop/checkout-integration/payment-element)

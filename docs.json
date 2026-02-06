@@ -76,12 +76,12 @@
                   {
                     "group": "POS API",
                     "pages": [
-                      "integration/en/in-store/pos-api/app-call-app",
-                      "integration/en/in-store/pos-api/ecr"
+                      "en/integration/in-store/pos-api/app-call-app",
+                      "en/integration/in-store/pos-api/ecr"
                     ]
                   },
-                  "integration/in-store/CPM",
-                  "integration/in-store/MPM"
+                  "en/integration/in-store/CPM",
+                  "en/integration/in-store/MPM"
                 ]
               },
               {
@@ -129,7 +129,19 @@
                   {
                     "group": "Integration by Use Case",
                     "pages": [
-                      "en/integration/online-shop/integration-by-use-case/web-payment"
+                      "en/integration/online-shop/integration-by-use-case/web-payment",
+                      "en/integration/online-shop/integration-by-use-case/02-wap-payment",
+                      "en/integration/online-shop/integration-by-use-case/03-in-app-payment",
+                      "en/integration/online-shop/integration-by-use-case/04-preauth",
+                      {
+                        "group": "Recurring Payments",
+                        "pages": [
+                          "en/integration/online-shop/integration-by-use-case/recurring-payments/01-recurring-overview",
+                          "en/integration/online-shop/integration-by-use-case/recurring-payments/02-recurring-api-reference",
+                          "en/integration/online-shop/integration-by-use-case/recurring-payments/03-recurring-webhook",
+                          "en/integration/online-shop/integration-by-use-case/recurring-payments/04-recurring-integration-guide"
+                        ]
+                      }
                     ]
                   }
                 ]
