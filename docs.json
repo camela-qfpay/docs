@@ -61,7 +61,9 @@
                 "pages": [
                   {
                     "group": "POS API",
-                    "pages": []
+                    "pages": [
+                      "integration/in-store/pos-api/app-call-app"
+                    ]
                   },
                   "integration/in-store/CPM",
                   "integration/in-store/MPM"
