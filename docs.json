@@ -154,20 +154,20 @@
               {
                 "group": "準備事項",
                 "pages": [
-                  "integration/preparation/zh-hant/introduction",
-                  "integration/preparation/zh-hant/environments"
+                  "integration/zh-hant/preparation/introduction",
+                  "integration/zh-hant/preparation/environments"
                 ]
               },
               {
                 "group": "API 參考文件",
                 "pages": [
-                  "integration/api-reference/zh-hant/request-format",
-                  "integration/api-reference/zh-hant/response-format",
-                  "integration/api-reference/zh-hant/signature-generation",
-                  "integration/api-reference/zh-hant/paytypes",
-                  "integration/api-reference/zh-hant/currencies",
-                  "integration/api-reference/zh-hant/status-codes",
-                  "integration/api-reference/zh-hant/api-usage-guidelines"
+                  "integration/zh-hant/api-reference/request-format",
+                  "integration/zh-hant/api-reference/response-format",
+                  "integration/zh-hant/api-reference/signature-generation",
+                  "integration/zh-hant/api-reference/paytypes",
+                  "integration/zh-hant/api-reference/currencies",
+                  "integration/zh-hant/api-reference/status-codes",
+                  "integration/zh-hant/api-reference/api-usage-guidelines"
                 ]
               },
               {
