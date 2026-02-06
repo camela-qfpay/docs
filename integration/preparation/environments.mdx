@@ -9,11 +9,11 @@ Each serves a different purpose and uses a distinct base URL. Be sure to target 
 
 ## Environment Details
 
-| Environment  | Base URL                            | Notes                                                              |
-| ------------ | ----------------------------------- | ------------------------------------------------------------------ |
-| Production   | `https://openapi-hk.qfapi.com`      | Actual live payments with real settlement                          |
-| Live Testing | `https://test-openapi-hk.qfapi.com` | Real payment flow but may be linked to test accounts (not settled) |
-| Sandbox      | `https://openapi-int.qfapi.com`     | For simulating credit card payments without deducting real funds   |
+| Environment  | Base URL                            | Notes                                                               |
+| ------------ | ----------------------------------- | ------------------------------------------------------------------- |
+| Production   | `https://openapi-hk.qfapi.com`      | Actual live payments with real settlement                           |
+| Live Testing | `https://test-openapi-hk.qfapi.com` | Real payment flow, but may be linked to test accounts (not settled) |
+| Sandbox      | `https://openapi-int.qfapi.com`     | For simulating credit card payments without deducting real funds    |
 
 <Warning>
   Transactions conducted in the **Live Testing** environment using test accounts will **not be settled**. Please ensure refunds are triggered immediately for any such tests.
