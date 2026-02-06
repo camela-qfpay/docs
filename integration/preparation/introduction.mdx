@@ -1,0 +1,41 @@
+---
+id: "introduction"
+title: "Introduction"
+sidebar_label: "Introduction"
+description: "How to set up credentials, environments and generate request signatures."
+---
+
+Welcome to the official QFPay OpenAPI documentation.
+
+To get started, review the instructions below. This guide will help you integrate QFPay APIs smoothly and securely.
+
+- Code examples in **Python, Java, Node.js, and PHP** are included directly in this documentation.
+- You can copy and modify them to suit your integration.
+
+If you'd like to quickly test the payment functions using Postman, we provide a pre-configured collection with a built-in script to generate the signature.\
+[**Download Postman Collection**](https://sdk.qfapi.com/assets/files/qfpay_openapi_payment_request.postman_collection-c8de8c8fe69f3fcd5a7653d41c289a29.json)
+
+---
+
+## Developer Instructions
+
+To use the QFPay OpenAPI, you must first obtain your API credentials, including:
+
+- `app_code`
+- `client_key`
+- (Optional) `mchid`, if required for your merchant setup
+
+<Note>
+  If `mchid` is provided to you by QFPay, you must include it in all API requests (unless explicitly stated otherwise).\
+  If `mchid` is **not** provided, do **not** submit it in the request payload.
+</Note>
+
+### Credentials and Merchant Structure
+
+- Every merchant receives a unique `app_code` and `client_key`.
+- Merchants with multiple store branches are also assigned a `mchid` to distinguish outlets.
+- The `mchid` is a hashed string that identifies the specific shop or branch.
+
+### Encoding
+
+Unless otherwise specified, all request and response data is encoded in `UTF-8`.

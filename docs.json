@@ -27,16 +27,22 @@
             "groups": [
               {
                 "group": "Getting Started",
-                "pages": ["quickstart", "development"]
+                "pages": [
+                  "quickstart",
+                  "development"
+                ]
               }
             ]
           },
           {
-            "tab": "Integration",
+            "tab": "API Reference",
             "groups": [
               {
                 "group": "Preparation",
-                "pages": ["integration/preparation/environments"]
+                "pages": [
+                  "integration/preparation/introduction",
+                  "integration/preparation/environments"
+                ]
               }
             ]
           }
@@ -50,20 +56,25 @@
             "groups": [
               {
                 "group": "開始使用",
-                "pages": ["zh-hant/quickstart", "zh-hant/development"]
+                "pages": [
+                  "zh-hant/quickstart",
+                  "zh-hant/development"
+                ]
               }
             ]
           },
           {
-            "tab": "整合",
+            "tab": "對接指南",
             "groups": [
               {
                 "group": "準備事項",
-                "pages": ["integration/preparation/zh-hant/environments"]
+                "pages": [
+                  "integration/preparation/zh-hant/environments"
+                ]
               }
             ]
           }
-          ]
+        ]
       }
     ]
   },
