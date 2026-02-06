@@ -31,19 +31,19 @@
                   {
                     "group": "Mintlify Files",
                     "pages": [
-                      "ai-tools/claude-code",
-                      "ai-tools/cursor",
-                      "ai-tools/windsurf",
-                      "essentials/code",
-                      "essentials/images",
-                      "essentials/markdown",
-                      "essentials/navigation",
-                      "essentials/reusable-snippets",
-                      "essentials/settings"
+                      "en/ai-tools/claude-code",
+                      "en/ai-tools/cursor",
+                      "en/ai-tools/windsurf",
+                      "en/essentials/code",
+                      "en/essentials/images",
+                      "en/essentials/markdown",
+                      "en/essentials/navigation",
+                      "en/essentials/reusable-snippets",
+                      "en/essentials/settings"
                     ]
                   },
-                  "quickstart",
-                  "development"
+                  "en/quickstart",
+                  "en/development"
                 ]
               }
             ]
@@ -54,20 +54,20 @@
               {
                 "group": "Preparation",
                 "pages": [
-                  "integration/en/preparation/introduction",
-                  "integration/en/preparation/environments"
+                  "en/integration/preparation/introduction",
+                  "en/integration/preparation/environments"
                 ]
               },
               {
                 "group": "API Reference",
                 "pages": [
-                  "integration/en/api-reference/api-usage-guidelines",
-                  "integration/en/api-reference/currencies",
-                  "integration/en/api-reference/paytypes",
-                  "integration/en/api-reference/request-format",
-                  "integration/en/api-reference/response-format",
-                  "integration/en/api-reference/signature-generation",
-                  "integration/en/api-reference/status-codes"
+                  "en/integration/api-reference/api-usage-guidelines",
+                  "en/integration/api-reference/currencies",
+                  "en/integration/api-reference/paytypes",
+                  "en/integration/api-reference/request-format",
+                  "en/integration/api-reference/response-format",
+                  "en/integration/api-reference/signature-generation",
+                  "en/integration/api-reference/status-codes"
                 ]
               },
               {
@@ -90,8 +90,8 @@
                   {
                     "group": "Checkout Integration",
                     "pages": [
-                      "integration/en/online-shop/checkout-integration/01-checkout",
-                      "integration/en/online-shop/checkout-integration/02-payment-element"
+                      "en/integration/online-shop/checkout-integration/01-checkout",
+                      "en/integration/online-shop/checkout-integration/02-payment-element"
                     ]
                   },
                   {
@@ -100,30 +100,30 @@
                       {
                         "group": "Alipay",
                         "pages": [
-                          "integration/en/online-shop/integration-by-payment-type/alipay/alipay-in-app",
-                          "integration/en/online-shop/integration-by-payment-type/alipay/alipay-wap-h5-payments",
-                          "integration/en/online-shop/integration-by-payment-type/alipay/alipay-web-payments"
+                          "en/integration/online-shop/integration-by-payment-type/alipay/alipay-in-app",
+                          "en/integration/online-shop/integration-by-payment-type/alipay/alipay-wap-h5-payments",
+                          "en/integration/online-shop/integration-by-payment-type/alipay/alipay-web-payments"
                         ]
                       },
                       {
                         "group": "FPS",
                         "pages": [
-                          "integration/en/online-shop/integration-by-payment-type/fps/fps-app-call-app",
-                          "integration/en/online-shop/integration-by-payment-type/fps/fps-ecert-setup"
+                          "en/integration/online-shop/integration-by-payment-type/fps/fps-app-call-app",
+                          "en/integration/online-shop/integration-by-payment-type/fps/fps-ecert-setup"
                         ]
                       },
                       {
                         "group": "Wechat",
                         "pages": [
-                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-in-app-payments",
-                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-jsapi-payment",
-                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-mini-programs",
-                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-pay-h5",
-                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-web-qr-payment"
+                          "en/integration/online-shop/integration-by-payment-type/wechat/wechat-in-app-payments",
+                          "en/integration/online-shop/integration-by-payment-type/wechat/wechat-jsapi-payment",
+                          "en/integration/online-shop/integration-by-payment-type/wechat/wechat-mini-programs",
+                          "en/integration/online-shop/integration-by-payment-type/wechat/wechat-pay-h5",
+                          "en/integration/online-shop/integration-by-payment-type/wechat/wechat-web-qr-payment"
                         ]
                       },
-                      "integration/en/online-shop/integration-by-payment-type/05-visa-master-online-payment",
-                      "integration/en/online-shop/integration-by-payment-type/06-applepay"
+                      "en/integration/online-shop/integration-by-payment-type/05-visa-master-online-payment",
+                      "en/integration/online-shop/integration-by-payment-type/06-applepay"
                     ]
                   },
                   {
@@ -158,20 +158,20 @@
               {
                 "group": "準備事項",
                 "pages": [
-                  "integration/zh-hant/preparation/introduction",
-                  "integration/zh-hant/preparation/environments"
+                  "zh-hant/integration/preparation/introduction",
+                  "zh-hant/integration/preparation/environments"
                 ]
               },
               {
                 "group": "API 參考文件",
                 "pages": [
-                  "integration/zh-hant/api-reference/request-format",
-                  "integration/zh-hant/api-reference/response-format",
-                  "integration/zh-hant/api-reference/signature-generation",
-                  "integration/zh-hant/api-reference/paytypes",
-                  "integration/zh-hant/api-reference/currencies",
-                  "integration/zh-hant/api-reference/status-codes",
-                  "integration/zh-hant/api-reference/api-usage-guidelines"
+                  "zh-hant/integration/api-reference/request-format",
+                  "zh-hant/integration/api-reference/response-format",
+                  "zh-hant/integration/api-reference/signature-generation",
+                  "zh-hant/integration/api-reference/paytypes",
+                  "zh-hant/integration/api-reference/currencies",
+                  "zh-hant/integration/api-reference/status-codes",
+                  "zh-hant/integration/api-reference/api-usage-guidelines"
                 ]
               },
               {
