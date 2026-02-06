@@ -138,7 +138,6 @@
       },
       {
         "language": "zh-Hant",
-        "flag": "hk",
         "tabs": [
           {
             "tab": "首頁",
@@ -173,11 +172,12 @@
                   "integration/api-reference/zh-hant/status-codes",
                   "integration/api-reference/zh-hant/api-usage-guidelines"
                 ]
+              },
+              {
+                "group": "實體店支付",
+                "pages": []
               }
             ]
-          },
-          {
-            "tab": "實體店支付"
           }
         ]
       }
