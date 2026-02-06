@@ -28,6 +28,16 @@
               {
                 "group": "Getting Started",
                 "pages": [
+                  {
+                    "group": "Mintlify Files",
+                    "pages": [
+                      "ai-tools/claude-code",
+                      "ai-tools/cursor",
+                      "ai-tools/windsurf",
+                      "essentials/code",
+                      "essentials/images"
+                    ]
+                  },
                   "quickstart",
                   "development"
                 ]
