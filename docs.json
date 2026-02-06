@@ -155,9 +155,7 @@
                   "en/integration/common-api/04-async-notifications",
                   "en/integration/common-api/05-transaction-note"
                 ]
-              },
-              "en/integration/customs-declaration",
-              "en/integration/FAQs"
+              }
             ]
           }
         ]
@@ -210,7 +208,8 @@
                     ]
                   },
                   "zh-hant/integration/in-store/CPM",
-                  "zh-hant/integration/in-store/MPM"]
+                  "zh-hant/integration/in-store/MPM"
+                ]
               },
               {
                 "group": "共用端點",
