@@ -217,6 +217,13 @@
                 "group": "線上支付",
                 "pages": [
                   {
+                    "group": "結帳方式整合",
+                    "pages": [
+                      "zh-hant/integration/online-shop/checkout-integration/01-checkout",
+                      "zh-hant/integration/online-shop/checkout-integration/02-payment-element"
+                    ]
+                  },
+                  {
                     "group": "按支付方式整合",
                     "pages": [
                       {
@@ -249,11 +256,8 @@
                     ]
                   },
                   {
-                    "group": "結帳方式整合",
-                    "pages": [
-                      "zh-hant/integration/online-shop/checkout-integration/01-checkout",
-                      "zh-hant/integration/online-shop/checkout-integration/02-payment-element"
-                    ]
+                    "group": "按支付場景整合",
+                    "pages": []
                   }
                 ]
               },

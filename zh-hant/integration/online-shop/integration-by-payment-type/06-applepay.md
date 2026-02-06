@@ -2,8 +2,6 @@
 title: "Apple Pay 支援"
 ---
 
-# Apple Pay 支援
-
 ## 簡介
 
 QFPay Checkout 與 Payment Element 均支援 Apple Pay 作為嵌入式支付選項。商戶需先於 QFPay 系統啟用 Apple Pay，消費者才能在支援裝置上選用此方式付款。Apple Pay 通常可提升授權成功率，並提供流暢的結帳體驗。
