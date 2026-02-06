@@ -145,6 +145,16 @@
                     ]
                   }
                 ]
+              },
+              {
+                "group": "Common API",
+                "pages": [
+                  "en/integration/common-api/01-transaction-enquiry",
+                  "en/integration/common-api/02-reversal",
+                  "en/integration/common-api/03-refund",
+                  "en/integration/common-api/04-async-notifications",
+                  "en/integration/common-api/05-transaction-note"
+                ]
               }
             ]
           }
