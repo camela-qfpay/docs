@@ -88,6 +88,13 @@
                 "group": "Online Payments",
                 "pages": [
                   {
+                    "group": "Checkout Integration",
+                    "pages": [
+                      "integration/online-shop/checkout-integration/01-checkout",
+                      "integration/online-shop/checkout-integration/02-payment-element"
+                    ]
+                  },
+                  {
                     "group": "Integration by Payment Type",
                     "pages": [
                       {
@@ -114,20 +121,15 @@
                           "integration/online-shop/integration-by-payment-type/wechat/wechat-pay-h5",
                           "integration/online-shop/integration-by-payment-type/wechat/wechat-web-qr-payment"
                         ]
-                      }
+                      },
+                      "integration/online-shop/integration-by-payment-type/05-visa-master-online-payment",
+                      "integration/online-shop/integration-by-payment-type/06-applepay"
                     ]
                   },
                   {
                     "group": "Integration by Use Case",
                     "pages": []
                   }
-                ]
-              },
-              {
-                "group": "Checkout Integration",
-                "pages": [
-                  "integration/online-shop/checkout-integration/01-checkout",
-                  "integration/online-shop/checkout-integration/02-payment-element"
                 ]
               }
             ]
