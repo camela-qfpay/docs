@@ -59,6 +59,10 @@
               {
                 "group": "In-Store Payments",
                 "pages": [
+                  {
+                    "group": "POS API",
+                    "pages": []
+                  },
                   "integration/in-store/CPM",
                   "integration/in-store/MPM"
                 ]
