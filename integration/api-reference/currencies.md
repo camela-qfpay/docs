@@ -26,6 +26,6 @@ USD | United States Dollar
 CAD | Canadian Dollar
 AUD | Australian Dollar
 
-:::note
+<Note>
 Some payment methods may only support HKD. Always verify with your integration manager before initiating non-HKD transactions.
-:::
+</Note>
