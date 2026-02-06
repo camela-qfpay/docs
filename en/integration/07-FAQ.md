@@ -1,8 +1,6 @@
 ---
-title: "FAQ"
+title: "FAQs"
 ---
-
-# FAQs
 
 **Q1. In the provided test account credentials, which field identifies the partner and which identifies the merchant?**
 
@@ -17,7 +15,7 @@ title: "FAQ"
 
 > A3. You can use a real wallet (e.g., Alipay or WeChat Pay) to test transactions in the test environment, which simulates the production setup. Contact our technical support if you need assistance.
 
-**``Q4. I received response code 1143 or 1145. What should I do?``**
+**`Q4. I received response code 1143 or 1145. What should I do?`**
 
 > A4. Continue polling the transaction status using the enquiry API.\
 > If your business process requires binary logic (success/failure), you may treat the transaction as **failed**, and later issue a refund if a successful asynchronous notification is received.
