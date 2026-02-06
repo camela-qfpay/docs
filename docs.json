@@ -51,7 +51,6 @@
           {
             "tab": "Integration",
             "pages": [
-              "page",
               {
                 "group": "Preparation",
                 "pages": [
@@ -156,7 +155,8 @@
                   "en/integration/common-api/04-async-notifications",
                   "en/integration/common-api/05-transaction-note"
                 ]
-              }
+              },
+              "page"
             ]
           }
         ]
