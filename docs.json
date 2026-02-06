@@ -79,6 +79,13 @@
             "tab": "對接指南",
             "groups": [
               {
+                "group": "準備事項",
+                "pages": [
+                  "integration/preparation/zh-hant/file",
+                  "integration/preparation/zh-hant/environments"
+                ]
+              },
+              {
                 "group": "API 參考文件",
                 "pages": [
                   "integration/api-reference/zh-hant/request-format",
@@ -88,13 +95,6 @@
                   "integration/api-reference/zh-hant/currencies",
                   "integration/api-reference/zh-hant/status-codes",
                   "integration/api-reference/zh-hant/api-usage-guidelines"
-                ]
-              },
-              {
-                "group": "準備事項",
-                "pages": [
-                  "integration/preparation/zh-hant/file",
-                  "integration/preparation/zh-hant/environments"
                 ]
               }
             ]
