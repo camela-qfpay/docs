@@ -128,7 +128,9 @@
                   },
                   {
                     "group": "Integration by Use Case",
-                    "pages": []
+                    "pages": [
+                      "en/integration/online-shop/integration-by-use-case/web-payment"
+                    ]
                   }
                 ]
               }
@@ -138,7 +140,6 @@
       },
       {
         "language": "zh-Hant",
-        "flag": "hk",
         "tabs": [
           {
             "tab": "首頁",
