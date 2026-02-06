@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "QFPay Developer Centre",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#005FCC",
+    "light": "#4EA8FF",
+    "dark": "#004299"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/logo.png",
   "navigation": {
     "global": {
       "anchors": [
@@ -103,10 +103,7 @@
       }
     ]
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
+  "logo": "/logo.png",
   "navbar": {
     "links": [
       {
@@ -141,5 +138,8 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     }
+  },
+  "appearance": {
+    "default": "light"
   }
 }
