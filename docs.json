@@ -50,7 +50,10 @@
                   "integration/api-reference/request-format",
                   "integration/api-reference/response-format",
                   "integration/api-reference/signature-generation",
-                  "integration/api-reference/paytypes"
+                  "integration/api-reference/paytypes",
+                  "integration/api-reference/currencies",
+                  "integration/api-reference/status-codes",
+                  "integration/api-reference/api-usage-guidelines"
                 ]
               },
               {
@@ -109,6 +112,9 @@
                 ]
               }
             ]
+          },
+          {
+            "tab": "實體店支付"
           }
         ]
       }
