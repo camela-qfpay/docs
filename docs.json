@@ -1,0 +1,171 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "theme": "mint",
+  "name": "QFPay Developer Centre",
+  "colors": {
+    "primary": "#005FCC",
+    "light": "#4EA8FF",
+    "dark": "#004299"
+  },
+  "favicon": "/images/logo.png",
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "QFPay Website",
+          "icon": "book-open-cover",
+          "href": "https://www.qfpay.global"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Home",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "quickstart",
+                  "development"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Integration",
+            "groups": [
+              {
+                "group": "Preparation",
+                "pages": [
+                  "integration/preparation/introduction",
+                  "integration/preparation/environments"
+                ]
+              },
+              {
+                "group": "API Reference",
+                "pages": [
+                  "integration/api-reference/api-usage-guidelines",
+                  "integration/api-reference/currencies",
+                  "integration/api-reference/paytypes",
+                  "integration/api-reference/request-format",
+                  "integration/api-reference/response-format",
+                  "integration/api-reference/signature-generation",
+                  "integration/api-reference/status-codes"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "In-Store Payments",
+            "groups": [
+              {
+                "group": "POS API",
+                "pages": [
+                  "integration/in-store/pos-api/app-call-app",
+                  "integration/in-store/pos-api/ecr"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "zh-Hant",
+        "tabs": [
+          {
+            "tab": "首頁",
+            "groups": [
+              {
+                "group": "開始使用",
+                "pages": [
+                  "zh-hant/quickstart",
+                  "zh-hant/development"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "對接指南",
+            "groups": [
+              {
+                "group": "準備事項",
+                "pages": [
+                  "integration/preparation/zh-hant/introduction",
+                  "integration/preparation/zh-hant/environments"
+                ]
+              },
+              {
+                "group": "API 參考文件",
+                "pages": [
+                  "integration/api-reference/zh-hant/request-format",
+                  "integration/api-reference/zh-hant/response-format",
+                  "integration/api-reference/zh-hant/signature-generation",
+                  "integration/api-reference/zh-hant/paytypes",
+                  "integration/api-reference/zh-hant/currencies",
+                  "integration/api-reference/zh-hant/status-codes",
+                  "integration/api-reference/zh-hant/api-usage-guidelines"
+                ]
+              },
+              {
+                "group": "實體店支付",
+                "pages": [
+                  {
+                    "group": "POS API",
+                    "pages": [
+                      "integration/in-store/zh-hant/pos-api/app-call-app",
+                      "integration/in-store/zh-hant/pos-api/ecr"
+                    ]
+                  },
+                  "integration/in-store/zh-hant/CPM",
+                  "integration/in-store/zh-hant/MPM"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": "/logo.png",
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hi@mintlify.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "ai": {
+    "enabled": true
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
+    }
+  },
+  "appearance": {
+    "default": "light"
+  }
+}
