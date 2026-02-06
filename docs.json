@@ -155,7 +155,9 @@
                   "en/integration/common-api/04-async-notifications",
                   "en/integration/common-api/05-transaction-note"
                 ]
-              }
+              },
+              "en/integration/customs-declaration",
+              "en/integration/FAQs"
             ]
           }
         ]
@@ -199,7 +201,16 @@
               },
               {
                 "group": "實體店支付",
-                "pages": []
+                "pages": [
+                  {
+                    "group": "POS API",
+                    "pages": [
+                      "zh-hant/integration/in-store/pos-api/app-call-app",
+                      "zh-hant/integration/in-store/pos-api/ecr"
+                    ]
+                  },
+                  "zh-hant/integration/in-store/CPM",
+                  "zh-hant/integration/in-store/MPM"]
               },
               {
                 "group": "共用端點",
