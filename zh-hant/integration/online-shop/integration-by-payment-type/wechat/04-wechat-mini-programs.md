@@ -1,22 +1,22 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
+---
+title: "微信小程序支付"
+---
 
 # 微信小程序支付
-<Link href="https://sdk.qfapi.com/images/wechat_mp_process.jpg" target="_blank">![WeChat MiniProgram process-flow](@site/static/img/wechat_mp_process.jpg)</Link>
+
+<Link href="https://sdk.qfapi.com/images/wechat_mp_process.jpg" target="_blank">
+  ![WeChat MiniProgram process-flow](@site/static/img/wechat_mp_process.jpg)
+</Link>
 
 ### HTTP请求
 
 `POST ../trade/v1/payment` `PayType: 800213`
 
-**Step 1:** 微信实名认证
-业务人员必须在微信官方平台进行身份验证后才能使用微信支付功能。
+**Step 1:** 微信实名认证 业务人员必须在微信官方平台进行身份验证后才能使用微信支付功能。
 
-**Step 2:** 获取 openid
-完成实名认证后，通过商户实名小程序获取openid参数。 具体获取方法详见 [微信文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html).
+**Step 2:** 获取 openid 完成实名认证后，通过商户实名小程序获取openid参数。 具体获取方法详见 [微信文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html).
 
-**Step 3:** 发送付款请求
-使用以下参数发起付款请求。
+**Step 3:** 发送付款请求 使用以下参数发起付款请求。
 
 商户可选择开通微信实名认证。 目前实名认证仅适用于中国大陆公民，包括真实姓名和身份证号码。 如果提供身份证明，付款人的钱包信息（例如连接的银行卡）必须与商家提供的数据相同。 如果客户尚未将微信账户绑定银行卡，仍可进行付款。
 
@@ -96,6 +96,7 @@ qfPayOpenAPI: function () {
 |Designated payment method   |`limit_pay`| 否 |String    |参数值指定为“no_credit”，禁止信用卡支付。 此设置仅对中国大陆有效。  |
 |Extended Customer Info | `extend_info` | 否 | Object | 实名客户身份识别。 该参数目前仅适用于中国大陆公民，并且需要针对所选的[PayType](/docs/preparation/paycode#支付类型)使用微信显式激活。 参数“user_creid”中包含消费者的**身份证号码**，“user_truename”中必须提供编码形式或汉字书写的付款人**真实姓名**。 一个例子如下所示； extend_info = '\{"user_creid":"430067798868676871","user_truename":"\\\u5c0f\\\u6797"\}'|
 
+
 ### 响应参数
 
 |参数编码| 二级参数编码| 参数类型| 参数名称|描述|
@@ -131,20 +132,19 @@ weChatPayment: function(res) {
 },
 ```
 
-获取“pay_params”参数，然后提供相应的付款详细信息。 欲了解更多详情，请参阅
-[微信文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5).
+获取“pay_params”参数，然后提供相应的付款详细信息。 欲了解更多详情，请参阅 [微信文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5).
 
 ## 微信小程序样板
 
 要快速开始使用，请下载 [QFPay 微信小程序样板](@site/static/files/qfpay_mini_program_payments_boilerplate.zip) 并获得 MD5 哈希算法的访问权限。
 
-<Link href="/img/miniprogram_boilerplate.png" target="_blank">![WeChat Mini Program Boilerplate](@site/static/img/miniprogram_boilerplate.png)</Link>
+<Link href="/img/miniprogram_boilerplate.png" target="_blank">
+  ![WeChat Mini Program Boilerplate](@site/static/img/miniprogram_boilerplate.png)
+</Link>
 
-<br/>
 **设置说明**
 
-1) 注册 QFPay，我们会将您的微信 appid 绑定到您的 API 凭证。 <br/>
-2) 访问微信 MP 门户 [https://mp.weixin.qq.com](https://mp.weixin.qq.com) 并将我们的环境列入传入服务器流量的白名单：<br/>
-开发 -> 开发设置 -> 服务器域名 -> request合法域名: e.g. https://test-openapi-hk.qfapi.com <br/>
-3) 将 zip 文件中的文件复制并粘贴到本地硬盘并设置云函数环境。 <br/>
-4) 使用云函数“getUserOpenID”获取用户openid，并根据代码运行API调用。 <br/>
+1. 注册 QFPay，我们会将您的微信 appid 绑定到您的 API 凭证。 
+2. 访问微信 MP 门户 https://mp.weixin.qq.com 并将我们的环境列入传入服务器流量的白名单：<br /> 开发 -\> 开发设置 -\> 服务器域名 -\> request合法域名: e.g. https://test-openapi-hk.qfapi.com 
+3. 将 zip 文件中的文件复制并粘贴到本地硬盘并设置云函数环境。 
+4. 使用云函数“getUserOpenID”获取用户openid，并根据代码运行API调用。 

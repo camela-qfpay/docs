@@ -214,6 +214,50 @@
                 ]
               },
               {
+                "group": "線上支付",
+                "pages": [
+                  {
+                    "group": "按支付方式整合",
+                    "pages": [
+                      {
+                        "group": "支付寶",
+                        "pages": [
+                          "zh-hant/integration/online-shop/integration-by-payment-type/alipay/01-alipay-web-payments",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/alipay/02-alipay-wap-h5-payments",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/alipay/04-alipay-in-app"
+                        ]
+                      },
+                      {
+                        "group": "微信支付",
+                        "pages": [
+                          "zh-hant/integration/online-shop/integration-by-payment-type/wechat/01-wechat-web-qr-payment",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/wechat/02-wechat-jsapi-payment",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/wechat/03-wechat-pay-h5",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/wechat/04-wechat-mini-programs",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/wechat/05-wechat-in-app-payments"
+                        ]
+                      },
+                      {
+                        "group": "FPS",
+                        "pages": [
+                          "zh-hant/integration/online-shop/integration-by-payment-type/fps/01-fps-app-call-app",
+                          "zh-hant/integration/online-shop/integration-by-payment-type/fps/02-fps-ecert-setup"
+                        ]
+                      },
+                      "zh-hant/integration/online-shop/integration-by-payment-type/05-visa-master-online-payment",
+                      "zh-hant/integration/online-shop/integration-by-payment-type/06-applepay"
+                    ]
+                  },
+                  {
+                    "group": "結帳方式整合",
+                    "pages": [
+                      "zh-hant/integration/online-shop/checkout-integration/01-checkout",
+                      "zh-hant/integration/online-shop/checkout-integration/02-payment-element"
+                    ]
+                  }
+                ]
+              },
+              {
                 "group": "共用端點",
                 "pages": [
                   "zh-hant/integration/common-api/01-transaction-enquiry",
