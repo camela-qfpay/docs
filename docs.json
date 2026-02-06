@@ -55,6 +55,13 @@
                   "api-reference/status-codes",
                   "api-reference/api-usage-guidelines"
                 ]
+              },
+              {
+                "group": "In-Store Payments",
+                "pages": [
+                  "integration/in-store/CPM",
+                  "integration/in-store/MPM"
+                ]
               }
             ]
           }
