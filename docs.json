@@ -61,7 +61,10 @@
                   "integration/en/api-reference/api-usage-guidelines",
                   "integration/en/api-reference/currencies",
                   "integration/en/api-reference/paytypes",
-                  "integration/en/api-reference/request-format"
+                  "integration/en/api-reference/request-format",
+                  "integration/en/api-reference/response-format",
+                  "integration/en/api-reference/signature-generation",
+                  "integration/en/api-reference/status-codes"
                 ]
               },
               {
