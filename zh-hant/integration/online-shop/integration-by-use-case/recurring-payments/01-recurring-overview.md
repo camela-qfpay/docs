@@ -1,6 +1,8 @@
 ---
+id: recurring-overview
 title: 定期付款概覽
 description: 簡介 QFPay 定期付款（訂閱支付）系統，包括使用情境、系統架構與關鍵組件。
+sidebar_label: 概覽
 -----------------
 
 # 定期付款概覽

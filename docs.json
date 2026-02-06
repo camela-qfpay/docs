@@ -261,7 +261,10 @@
                       {
                         "group": "定期付款",
                         "pages": [
-                          "zh-hant/integration/online-shop/integration-by-use-case/recurring-payments/01-recurring-overview"
+                          "zh-hant/integration/online-shop/integration-by-use-case/recurring-payments/01-recurring-overview",
+                          "zh-hant/integration/online-shop/integration-by-use-case/recurring-payments/02-recurring-api-reference",
+                          "zh-hant/integration/online-shop/integration-by-use-case/recurring-payments/03-recurring-webhook",
+                          "zh-hant/integration/online-shop/integration-by-use-case/recurring-payments/04-recurring-integration-guide"
                         ]
                       }
                     ]
