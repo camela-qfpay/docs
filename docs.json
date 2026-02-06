@@ -48,7 +48,8 @@
                 "group": "API Reference",
                 "pages": [
                   "integration/api-reference/request-format",
-                  "integration/api-reference/response-format"
+                  "integration/api-reference/response-format",
+                  "integration/api-reference/signature-generation"
                 ]
               },
               {
