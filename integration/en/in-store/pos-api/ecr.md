@@ -1,22 +1,16 @@
 ---
-id: ecr
-title: ECR Integration Technical Specification
-description: Integration protocol and encryption details for connecting POS with QFPay ECR system.
-sidebar_label: ECR Integration
+id: "ecr"
+title: "ECR Integration Technical Specification"
+description: "Integration protocol and encryption details for connecting POS with QFPay ECR system."
+sidebar_label: "ECR Integration"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
-
-
-# ECR Integration Technical Specification
-
-:::note
+<Note>
 **Supported Terminal Models**
+
 - **Landi A8 / A8S**: All payment methods supported
 - **PAX A920**: QR code payment only
-:::
+</Note>
 
 ## 1. POS-KEY
 
@@ -26,24 +20,24 @@ The default encryption is **enabled**. Merchants may toggle this on/off or regen
 
 **Steps to refresh POS-KEY:**
 
-* Haojin App → My → Settings → POS-Key → Generate
+- Haojin App → My → Settings → POS-Key → Generate
 
 **Steps to check POS-KEY:**
 
-* Merchant Portal → Settings → Devices Settings → POS Key Mgmt tab
+- Merchant Portal → Settings → Devices Settings → POS Key Mgmt tab
 
 ## 2. Encryption
 
-* All transaction data is encrypted using **AES**.
-* Key = POS-KEY
-* IV = `qfpay202306_hjsh`
-* Encrypted result is Base64 encoded
+- All transaction data is encrypted using **AES**.
+- Key = POS-KEY
+- IV = `qfpay202306_hjsh`
+- Encrypted result is Base64 encoded
 
 ## 3. Request Payload Format
 
 | Attribute           | Mandatory | Type    | Description                                                          |
 | ------------------- | --------- | ------- | -------------------------------------------------------------------- |
-| `amt`               | Yes       | Double  | Transaction amount (e.g., 10.1 = HKD $10.10)                         |
+| `amt`               | Yes       | Double  | Transaction amount (e.g., 10.1 = HKD \$10.10)                        |
 | `func_type`         | Yes       | String  | Instruction code                                                     |
 | `channel`           | Yes       | String  | Wallet/payment method (see table below)                              |
 | `out_trade_no`      | No        | String  | Merchant reference ID                                                |
@@ -66,7 +60,7 @@ The default encryption is **enabled**. Merchants may toggle this on/off or regen
 - **Scan Type** (`scan_type`):
   - `QRCODE_PAY`
   - `SCAN_PAY`
-- **Return to Home (`moveToBack`)**:
+- **`Return to Home (moveToBack)`**:
   - `0`: Do not return to home screen (default)
   - `1`: Automatically return to home screen after transaction
 
@@ -96,9 +90,7 @@ The default encryption is **enabled**. Merchants may toggle this on/off or regen
 | `refund_amount`     | No        | String  | Supports partial refund. Default = max refundable amount. |
 | `allow_modify_flag` | No        | Integer | 0 = fixed refund amount (default), 1 = allow modification |
 
-:::note
-For Visa / Mastercard, UnionPay Card and American Express Card, the amount of same-day refund must be the **full amount**. Partial same-day refunds are not supported.
-:::
+:::note For Visa / Mastercard, UnionPay Card and American Express Card, the amount of same-day refund must be the **full amount**. Partial same-day refunds are not supported. :::
 
 ```json
 {
@@ -111,7 +103,6 @@ For Visa / Mastercard, UnionPay Card and American Express Card, the amount of sa
     },
      "digest": "9C8E9FB05C7C24B6CA04EBFA1263EF41"
 }
-
 ```
 
 ### 3.3 Print Receipt
@@ -165,7 +156,6 @@ format_content={amt=100,channel='card_payment',func_type=1001,out_trade_no='4567
 // !! if the value is empty, pass '' (empty string) instead
 digest=md5(format_content + pos_key)
 digest=md5({amt=100,channel='card_payment',func_type=1001,out_trade_no='456799999999'}f46b1f****aacd) 
-
 ```
 
 If encryption is enabled, encrypt `content` with AES and calculate `digest` based on encrypted payload.
@@ -192,7 +182,8 @@ If encryption is enabled, encrypt `content` with AES and calculate `digest` base
 
 ### 5.2 `channel` (Payment Method)
 
-> **CPM** = Consumer-Presented QR Code<br/>**MPM** = Merchant-Presented QR Code
+> **CPM** = Consumer-Presented QR Code\
+> **MPM** = Merchant-Presented QR Code
 
 | Value           | Description           | PayType Mapping                 |
 | --------------- | --------------------- | ------------------------------- |
@@ -312,21 +303,19 @@ QFPay Transaction ID (same as `syssn` or `out_trade_no`)
 2. Data Format:
    - Encrypt the payload via AES.
    - Send request via HTTP POST.
-
 3. API Paths:
-   | Operation              | Endpoint Path              |
-   |------------------------|----------------------------|
-   | Trade                  | `/api/pos/trade`           |
-   | Refund                 | `/api/pos/cancel`          |
-   | Print Receipt          | `/api/pos/print_receipt`   |
-   | Print Summary          | `/api/pos/transaction_info`|
-   | Transaction Inquiry    | `/api/pos/query_transaction`|
-   | Cancel Trade/Refund    | `/api/pos/cancel_request`  |
 
-4. Headers:  
+   | Operation           | Endpoint Path                |
+   | ------------------- | ---------------------------- |
+   | Trade               | `/api/pos/trade`             |
+   | Refund              | `/api/pos/cancel`            |
+   | Print Receipt       | `/api/pos/print_receipt`     |
+   | Print Summary       | `/api/pos/transaction_info`  |
+   | Transaction Inquiry | `/api/pos/query_transaction` |
+   | Cancel Trade/Refund | `/api/pos/cancel_request`    |
+4. Headers:
    - `Content-Type: application/json`
-
-5. Response:  
+5. Response:
    - Response must be decrypted using AES to obtain result content.
 
 ## 9. TCP Protocol
@@ -349,31 +338,31 @@ Cash register communicates with Smart POS via serial port (USB or Bluetooth) usi
 
 ### 10.3 Payload Format
 
-| Field Name                | Content            | Description                                               | Length    |
-|--------------------------|--------------------|-----------------------------------------------------------|-----------|
-| `Start indicator`        | `0x2f6e`            | Marks start of payload                                    | 2 Bytes   |
-| `version`                | `0x01`              | Static version                                            | 1 Byte    |
-| `payload type`           | `0x10` / `0x20` / `0x30` | Request / Response / Error                        | 1 Byte    |
-| `response ref number`    | `0x01 ~ 0x7f`        | Used for request-response pairing                         | 1 Byte    |
-| `payload length`         | —                   | Length from `Start` to `End` indicator                    | 2 Bytes   |
-| `payload length (data)`  | —                   | Length of `data segment`                                  | 2 Bytes   |
-| `data segment`           | —                   | UTF-8 encoded business data                               | Variable  |
-| `End indicator`          | `0x2f6e`            | Marks end of payload                                      | 2 Bytes   |
+| Field Name              | Content                  | Description                            | Length   |
+| ----------------------- | ------------------------ | -------------------------------------- | -------- |
+| `Start indicator`       | `0x2f6e`                 | Marks start of payload                 | 2 Bytes  |
+| `version`               | `0x01`                   | Static version                         | 1 Byte   |
+| `payload type`          | `0x10` / `0x20` / `0x30` | Request / Response / Error             | 1 Byte   |
+| `response ref number`   | `0x01 ~ 0x7f`            | Used for request-response pairing      | 1 Byte   |
+| `payload length`        | —                        | Length from `Start` to `End` indicator | 2 Bytes  |
+| `payload length (data)` | —                        | Length of `data segment`               | 2 Bytes  |
+| `data segment`          | —                        | UTF-8 encoded business data            | Variable |
+| `End indicator`         | `0x2f6e`                 | Marks end of payload                   | 2 Bytes  |
 
 :::warning
-> `0x2f6e` is the hexadecimal of `/n` (string literal, not newline) in ASCII encoding.
-:::
+
+> `0x2f6e` is the hexadecimal of `/n` (string literal, not newline) in ASCII encoding. :::
 
 ### 10.4 Error Types
 
-| Code  | Description                        |
-|-------|------------------------------------|
-| `0x30` | Unknown error                     |
-| `0x31` | Format error                      |
-| `0x32` | Validation error                  |
-| `0x33` | Decryption error                  |
-| `0x34` | Data segment format error         |
-| `0x35` | Packet concatenation error        |
+| Code   | Description                |
+| ------ | -------------------------- |
+| `0x30` | Unknown error              |
+| `0x31` | Format error               |
+| `0x32` | Validation error           |
+| `0x33` | Decryption error           |
+| `0x34` | Data segment format error  |
+| `0x35` | Packet concatenation error |
 
 ### 10.5 Request and Response
 
@@ -407,27 +396,25 @@ Cash register communicates with Smart POS via serial port (USB or Bluetooth) usi
 
 ### 10.9 Serial Port Settings
 
-| Setting        | Value     |
-|----------------|-----------|
-| Baud rate      | 9600      |
-| Stop bit       | 1         |
-| Parity bit     | 0         |
-| Data bits      | 8         |
-| Flow control   | Off       |
+| Setting      | Value |
+| ------------ | ----- |
+| Baud rate    | 9600  |
+| Stop bit     | 1     |
+| Parity bit   | 0     |
+| Data bits    | 8     |
+| Flow control | Off   |
 
 ##### Supported USB-to-Serial Chips
 
-| Chip    | Supported |
-|---------|-----------|
-| PL2303 HXD | ✅ Yes |
-| CH340      | ❌ No  |
-| FT232      | ❌ No  |
+| Chip       | Supported |
+| ---------- | --------- |
+| PL2303 HXD | ✅ Yes     |
+| CH340      | ❌ No      |
+| FT232      | ❌ No      |
 
-:::note
-The table above applies to this POS integration’s USB communication mode only. 
+:::note The table above applies to this POS integration’s USB communication mode only.
 
-If merchants are **not using USB**, and instead integrating via **HTTP or TCP**, chip support is not relevant. In terms of general driver compatibility and stability across platforms, the typical ranking is: FT232 > CH340 > PL2303.
-:::
+If merchants are **not using USB**, and instead integrating via **HTTP or TCP**, chip support is not relevant. In terms of general driver compatibility and stability across platforms, the typical ranking is: FT232 \> CH340 \> PL2303. :::
 
 ### 10.10 Sample Payload
 
@@ -438,7 +425,7 @@ If merchants are **not using USB**, and instead integrating via **HTTP or TCP**,
 ```
 
 **Hexadecimal Packet (complete)**:
+
 ```plaintext
 2f6e011001007f00747b22636f6e74656e74223a227b5c22616d745c223a3130302c5c226368616e6e656c5c223a5c2277785c222c5c2266756e63547970655c223a312c5c226d6f64655c223a317d222c22646967657374223a223266306334363833653235613762393430373236353033333037306539303334227d2f6e
 ```
-

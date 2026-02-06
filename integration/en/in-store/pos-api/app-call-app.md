@@ -1,22 +1,17 @@
 ---
-id: app-call-app
-title: App Call App Android SDK
-sidebar_label: App Call App Android SDK
-description: This document explains how to integrate the QFPay HaoJin Android SDK to enable App-to-App payment features, including payment, refund, transaction query, pre-authorisation, and card settlement.
+id: "app-call-app"
+title: "App Call App Android SDK"
+sidebar_label: "App Call App Android SDK"
+description: "This document explains how to integrate the QFPay HaoJin Android SDK to enable App-to-App payment features, including payment, refund, transaction query, pre-authorisation, and card settlement."
 ---
-
-import Link from '@docusaurus/Link';
-
-# App Call App Android SDK
 
 ## Latest Version Changelog
 
 **version 2.3.4.jar**
 
 1. SDK supports setting scan type:
-
-   * `CollectionReq.SCAN_TYPE_SCAN`: Scan customer QR code
-   * `CollectionReq.SCAN_TYPE_QRCODE`: Display QR code for customer to scan
+   - `CollectionReq.SCAN_TYPE_SCAN`: Scan customer QR code
+   - `CollectionReq.SCAN_TYPE_QRCODE`: Display QR code for customer to scan
 
 Example:
 
@@ -24,10 +19,8 @@ Example:
 CollectionReq req = new CollectionReq(Long.parseLong(money));
 req.setScan_type(scan_type); // Set scan type: CollectionReq.SCAN_TYPE_SCAN / CollectionReq.SCAN_TYPE_QRCODE
 ```
-:::note
-If the merchant wishes to force QR code display mode (e.g. showing a static QR code for the customer to scan), it is recommended to use `SCAN_TYPE_QRCODE`. The default camera used is the rear camera.
-:::
----
+
+## :::note If the merchant wishes to force QR code display mode (e.g. showing a static QR code for the customer to scan), it is recommended to use `SCAN_TYPE_QRCODE`. The default camera used is the rear camera. :::
 
 ## Introduction
 
@@ -115,9 +108,7 @@ public void onActivityResult(int requestCode, int resultCode, @Nullable Intent d
 }
 ```
 
-:::warning
-The returned result may be `null`. Always perform a null check before accessing any data fields.
-:::
+:::warning The returned result may be `null`. Always perform a null check before accessing any data fields. :::
 
 #### Refund
 
@@ -162,19 +153,18 @@ int ret = mTradeApi.doTrade(getTransListReq);
 ```
 
 :::note
-1. Please ensure the selected payment channel is supported.  
-2. Only two transaction types are supported: payment and refund.  
-3. Custom time range takes precedence over monthly query.  
-4. Time format must be “yyyy-MM-dd HH:mm:ss”.  
-5. Month format must be “yyyyMM”.  
-6. Pagination starts from page 1.  
-:::
 
-:::note
-If both time range and month are provided, the SDK will prioritise the time range.  
-Use monthly queries for full-month reports and time range queries for precise statistics.  
-:::
+1. Please ensure the selected payment channel is supported.
+2. Only two transaction types are supported: payment and refund.
+3. Custom time range takes precedence over monthly query.
+4. Time format must be “yyyy-MM-dd HH:mm:ss”.
+5. Month format must be “yyyyMM”.
+6. Pagination starts from page 1.\
+   :::
 
+:::note If both time range and month are provided, the SDK will prioritise the time range.\
+Use monthly queries for full-month reports and time range queries for precise statistics.\
+:::
 
 Parse:
 
@@ -230,9 +220,7 @@ public void onActivityResult(int requestCode, int resultCode, @Nullable Intent d
 
 #### Deprecated: Get Channel Config
 
-:::danger
-This API has been deprecated. Please use the `GetUserConfigReq` API to achieve the same functionality.
-:::
+:::danger This API has been deprecated. Please use the `GetUserConfigReq` API to achieve the same functionality. :::
 
 ```java
 GetChannelConfigReq req = new GetChannelConfigReq();
@@ -253,6 +241,7 @@ public void onActivityResult(int requestCode, int resultCode, @Nullable Intent d
     }
 }
 ```
+
 ---
 
 ## Query User Configuration
@@ -274,17 +263,13 @@ List<Channel> channels = userConfig.getTransChannels();
 int currencyCode = userConfig.getCurrency();
 ```
 
-:::warning
-If `userConfig` cannot be retrieved properly, it usually indicates an authorisation issue or incomplete account configuration. Please contact technical support.
-:::
+:::warning If `userConfig` cannot be retrieved properly, it usually indicates an authorisation issue or incomplete account configuration. Please contact technical support. :::
 
 ---
 
 ## Pre-authorization: Deduct
 
-:::note
-Pre-authorisation transactions are suitable for scenarios such as hotel check-ins or equipment rentals, where an amount can be frozen first and later charged or cancelled after the service is completed.
-:::
+:::note Pre-authorisation transactions are suitable for scenarios such as hotel check-ins or equipment rentals, where an amount can be frozen first and later charged or cancelled after the service is completed. :::
 
 ```java
 PreAuthTransDeductReq req = new PreAuthTransDeductReq(transId);
@@ -457,82 +442,83 @@ public void onActivityResult(int requestCode, int resultCode, @Nullable Intent d
 
 ### Transaction Information Field Description
 
-| Attribute | Type | Mandatory | Description |
-| --------- | ---- | --------- | ----------- |
-| `id` | String  |   Yes   | Transaction idendity number |
-| `amt` | Long | Yes | Transaction Amount |
-| `time` | String | Yes | Transaction time yyy-MM-dd HH:mm:ss |
-| `channel` | String | Yes | Transaction channel like weixin, alipay |
-| `status` | Integer | Yes | Transaction status |
-| `type` | String | Yes | Transaction type, payment or refund |
-| `originId` | String | No | Original transaction id, mandatory if the transaction is refund |
-| `mchntName` | String | Yes | Sore name |
-| `remarks` | String | No | Transaction remarks |
-| `confirmCode` | String | No | Transaction confirmation code |
-| `operatorAccount` | String | Yes | Operator name |
-| `appCode` | String | No | Application code (swipe card) |
-| `customerId` | String | No | Idendity of customer wallet (pre-authorization) |
-| `customerAccount` | String | No | Account of customer wallet (pre-authorization)|
-| `completeTransId` | String | No | Newly generated transaction id when the pre-authorization transaction is completed (pre-authorization) |
-| `completeTime` | String | No | Complete time when the pre-authorization transaction is completed yyyy-MM-dd HH:mm:ss (pre-authorization) |
+| Attribute         | Type    | Mandatory | Description                                                                                               |
+| ----------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| `id`              | String  | Yes       | Transaction idendity number                                                                               |
+| `amt`             | Long    | Yes       | Transaction Amount                                                                                        |
+| `time`            | String  | Yes       | Transaction time yyy-MM-dd HH:mm:ss                                                                       |
+| `channel`         | String  | Yes       | Transaction channel like weixin, alipay                                                                   |
+| `status`          | Integer | Yes       | Transaction status                                                                                        |
+| `type`            | String  | Yes       | Transaction type, payment or refund                                                                       |
+| `originId`        | String  | No        | Original transaction id, mandatory if the transaction is refund                                           |
+| `mchntName`       | String  | Yes       | Sore name                                                                                                 |
+| `remarks`         | String  | No        | Transaction remarks                                                                                       |
+| `confirmCode`     | String  | No        | Transaction confirmation code                                                                             |
+| `operatorAccount` | String  | Yes       | Operator name                                                                                             |
+| `appCode`         | String  | No        | Application code (swipe card)                                                                             |
+| `customerId`      | String  | No        | Idendity of customer wallet (pre-authorization)                                                           |
+| `customerAccount` | String  | No        | Account of customer wallet (pre-authorization)                                                            |
+| `completeTransId` | String  | No        | Newly generated transaction id when the pre-authorization transaction is completed (pre-authorization)    |
+| `completeTime`    | String  | No        | Complete time when the pre-authorization transaction is completed yyyy-MM-dd HH:mm:ss (pre-authorization) |
 
 ## Channel Information Field Description
 
-| Attribute | Type | Mandatory | Description |
-| ---------- | ---- |---------- | ----------- |
-| `name` | String | Yes | Channel name |
-| `desc` | String | Yes | Channel description |
+| Attribute | Type   | Mandatory | Description         |
+| --------- | ------ | --------- | ------------------- |
+| `name`    | String | Yes       | Channel name        |
+| `desc`    | String | Yes       | Channel description |
 
 ### Transaction Status Field Description
 
-| Transaction Status | Description       |
-| ------------------ | ------------------|
-| 0 | Normal transaction |
-| -1/-2 | Waiting for payment |
-| -3 | Failed |
-| 1 | Reversal |
-| 2 | Void |
-| 3 | Refund |
-| 4 | Partial Refund |
-| 5 | Pre-authorization Frozen |
-| 6 | Pre-authorization Unfrozen |
-| 7 | Pre-authorization Completed |
+| Transaction Status | Description                 |
+| ------------------ | --------------------------- |
+| 0                  | Normal transaction          |
+| -1/-2              | Waiting for payment         |
+| -3                 | Failed                      |
+| 1                  | Reversal                    |
+| 2                  | Void                        |
+| 3                  | Refund                      |
+| 4                  | Partial Refund              |
+| 5                  | Pre-authorization Frozen    |
+| 6                  | Pre-authorization Unfrozen  |
+| 7                  | Pre-authorization Completed |
 
 ### Result Code Description
 
-| Result Code        | Description       |
-| ------------------ | ------------------|
-| -1 | Unknown error |
-| 0 | Success |
-| 100 | Client error |
-| 101 | Amount error |
-| 102 | AppId is empty |
-| 103 | Order id is empty |
-| 104 | Other parameter is empty |
-| 105 | User cancel |
-| 106 | Network error |
-| 107 | User not logged in |
-| 108 | Application not installed |
-| 109 | Launch App failed |
-| 110 | Non-support API invoke |
-| 111 | Time period error |
-| 112 | Cross-month query not allowed |
-| 113 | Failed to get config info |
-| 114 | Card adjust failed |
-| 115 | Device does not support card swiping |
-| 116 | Password input error |
-| 200 | Server error |
-| 201 | Order id does not exist |
-| 202 | Transaction Failed |
-| 203 | Insufficient account balance |
-| 204 | Transaction is confirming |
-| 205 | Login status expired |
-| 206 | Refund is confirming |
-| 207 | Refund Failed |
+| Result Code | Description                          |
+| ----------- | ------------------------------------ |
+| -1          | Unknown error                        |
+| 0           | Success                              |
+| 100         | Client error                         |
+| 101         | Amount error                         |
+| 102         | AppId is empty                       |
+| 103         | Order id is empty                    |
+| 104         | Other parameter is empty             |
+| 105         | User cancel                          |
+| 106         | Network error                        |
+| 107         | User not logged in                   |
+| 108         | Application not installed            |
+| 109         | Launch App failed                    |
+| 110         | Non-support API invoke               |
+| 111         | Time period error                    |
+| 112         | Cross-month query not allowed        |
+| 113         | Failed to get config info            |
+| 114         | Card adjust failed                   |
+| 115         | Device does not support card swiping |
+| 116         | Password input error                 |
+| 200         | Server error                         |
+| 201         | Order id does not exist              |
+| 202         | Transaction Failed                   |
+| 203         | Insufficient account balance         |
+| 204         | Transaction is confirming            |
+| 205         | Login status expired                 |
+| 206         | Refund is confirming                 |
+| 207         | Refund Failed                        |
 
 ## Version History
 
 ### version 2.3.3.jar
+
 1. The `Transaction` class added two new methods: `getOut_trade_no` and `getCardscheme`.
 
 ---
@@ -540,10 +526,12 @@ public void onActivityResult(int requestCode, int resultCode, @Nullable Intent d
 ### version 2.3.2.jar
 
 #### 1. Transaction Features:
+
 1. Transactions now support passing an external order number (`out_trade_no`).
 2. Card swipe timeout (`wait_card_timeout`) can be configured (default is 120 seconds, must be greater than 0).
 
 Example usage:
+
 ```java
 CollectionReq req = new CollectionReq(Long.parseLong(money));
 req.setWait_card_timeout(wait_card_timeout);
@@ -551,23 +539,24 @@ req.setOut_trade_no(out_trade_no);
 ```
 
 #### 2. Query Features:
-1.	Supports querying transaction data using out_trade_no.
-Example usage:
+
+1. Supports querying transaction data using out_trade_no. Example usage:
+
 ```java
 GetTransReq req = new GetTransReq(order_id);
 req.setOut_trade_no(out_trade_no);
 ```
-:::warning
-The timeout value must be a positive integer. If not set or set incorrectly (e.g. ≤ 0), it will default to 120 seconds.
-:::
+
+:::warning The timeout value must be a positive integer. If not set or set incorrectly (e.g. ≤ 0), it will default to 120 seconds. :::
 
 ---
 
 ### version 2.3.1.jar
-1.	SDK now supports specifying payment methods:
-Set via CollectionReq.setPay_method.
+
+1. SDK now supports specifying payment methods: Set via CollectionReq.setPay_method.
 
 Available `pay_method` values:
+
 - `card_payment`: Credit Card
 - `wx`: WeChat Pay
 - `alipay`: Alipay
@@ -578,22 +567,19 @@ Available `pay_method` values:
 - `unionpay_card`: UnionPay Card
 - `amex_card`: American Express
 
-:::danger
-If the account is not enabled for the specified payment method, the SDK will fall back to the payment method selection screen.
-:::
+:::danger If the account is not enabled for the specified payment method, the SDK will fall back to the payment method selection screen. :::
 
-2.	Support for camera selection:
-Use `CollectionReq.setCamera_id` to specify front or back camera (default is back camera).
+2. Support for camera selection: Use `CollectionReq.setCamera_id` to specify front or back camera (default is back camera).
 
 Available camera_id values:
+
 - `0`: CAMERA_PARAM_BACK (Back Camera)
 - `1`: CAMERA_PARAM_FRONT (Front Camera)
 
-:::danger
-Only values `0` and `1` are supported. Any other values will be ignored and default to the back camera.
-:::
+:::danger Only values `0` and `1` are supported. Any other values will be ignored and default to the back camera. :::
 
 Example usage:
+
 ```java
 CollectionReq req = new CollectionReq(Long.parseLong(money));
 req.setPay_method(current_paymethod);
