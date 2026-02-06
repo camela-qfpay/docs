@@ -1,10 +1,8 @@
 ---
-id: api-usage-guidelines
-title: API 使用指南
-sidebar_label: API 使用
+id: "api-usage-guidelines"
+title: "API 使用指南"
+sidebar_label: "API 使用"
 ---
-
-# API 使用指南
 
 為了確保平台的公平使用與最佳效能，我們實施了 API 請求頻率限制政策。本頁說明請求限制細節及相關處理方式。
 
@@ -30,7 +28,6 @@ sidebar_label: API 使用
    - 在應用程式中設計重試邏輯，例如：
      - 停止請求一段時間（如延遲幾秒再重試）
      - 記錄錯誤發生時間與頻率，以利後續監控
-
 2. **實作指數退避策略（Exponential Backoff）**：
    - 每次重試時逐步延長等待時間，避免立即再次造成阻塞。
 
