@@ -83,6 +83,52 @@
                   "integration/in-store/CPM",
                   "integration/in-store/MPM"
                 ]
+              },
+              {
+                "group": "Online Payments",
+                "pages": [
+                  {
+                    "group": "Integration by Payment Type",
+                    "pages": [
+                      {
+                        "group": "Alipay",
+                        "pages": [
+                          "integration/online-shop/integration-by-payment-type/alipay/alipay-in-app",
+                          "integration/online-shop/integration-by-payment-type/alipay/alipay-wap-h5-payments",
+                          "integration/online-shop/integration-by-payment-type/alipay/alipay-web-payments"
+                        ]
+                      },
+                      {
+                        "group": "FPS",
+                        "pages": [
+                          "integration/online-shop/integration-by-payment-type/fps/fps-app-call-app",
+                          "integration/online-shop/integration-by-payment-type/fps/fps-ecert-setup"
+                        ]
+                      },
+                      {
+                        "group": "Wechat",
+                        "pages": [
+                          "integration/online-shop/integration-by-payment-type/wechat/wechat-in-app-payments",
+                          "integration/online-shop/integration-by-payment-type/wechat/wechat-jsapi-payment",
+                          "integration/online-shop/integration-by-payment-type/wechat/wechat-mini-programs",
+                          "integration/online-shop/integration-by-payment-type/wechat/wechat-pay-h5",
+                          "integration/online-shop/integration-by-payment-type/wechat/wechat-web-qr-payment"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Integration by Use Case",
+                    "pages": []
+                  }
+                ]
+              },
+              {
+                "group": "Checkout Integration",
+                "pages": [
+                  "integration/online-shop/checkout-integration/01-checkout",
+                  "integration/online-shop/checkout-integration/02-payment-element"
+                ]
               }
             ]
           }
