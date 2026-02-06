@@ -35,7 +35,11 @@
                       "ai-tools/cursor",
                       "ai-tools/windsurf",
                       "essentials/code",
-                      "essentials/images"
+                      "essentials/images",
+                      "essentials/markdown",
+                      "essentials/navigation",
+                      "essentials/reusable-snippets",
+                      "essentials/settings"
                     ]
                   },
                   "quickstart",
