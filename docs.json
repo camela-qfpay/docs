@@ -62,6 +62,7 @@
                   {
                     "group": "POS API",
                     "pages": [
+                      "integration/in-store/pos-api/ecr",
                       "integration/in-store/pos-api/app-call-app"
                     ]
                   },
