@@ -1,53 +1,56 @@
 ---
 id: recurring-webhook
-title: Subscription Webhook (Recurring Payment Notifications)
-description: This document describes the webhook notification system for recurring payments (subscriptions), including token creation, subscription status changes, and billing result notifications.
-sidebar_label: Webhook Notifications
+title: 訂閱支付 Webhook（定期付款通知）
+description: 本文件說明 QFPay 訂閱支付（定期付款）的 Webhook 非同步通知機制，包含支付令牌建立、訂閱狀態變更，以及定期扣款結果通知。
+sidebar_label: Webhook 通知
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
-# Subscription Webhook (Recurring Payment Notifications)
+# 訂閱支付 Webhook（定期付款通知）
 
-This page describes how QFPay sends asynchronous notifications related to the subscription system. This includes:
+本頁說明 QFPay 如何針對訂閱支付系統發送非同步通知（Webhook），涵蓋以下事件類型：
 
-- Token creation results
-- Subscription state changes
-- Recurring billing results
+- 支付令牌（Token）建立結果
+- 訂閱狀態變更
+- 定期扣款（訂閱支付）結果
 
-## How to Configure Notification URL
+## 如何設定通知 URL
 
 :::note
-To set your webhook endpoint, please email your webhook URL along with your merchant ID and store ID to: `technical.support@qfpay.com`
+如需設定 Webhook 接收端點，請將以下資訊寄送至 `technical.support@qfpay.com`：
+- Webhook URL
+- 商戶 ID
+- 門店 ID
 :::
 
 ---
 
-## Token Creation Notification
+## 支付令牌建立通知（Token Creation Notification）
 
-Triggered after a payment token is created via Element SDK.
+當透過 Element SDK 成功建立支付令牌後，系統會發送此通知。
 
-### Notification Fields
+### 通知欄位說明
 
-| Field           | Description                                                   |
-|----------------|---------------------------------------------------------------|
-| `userid`       | QFPay Store ID                                                |
-| `notify_type`  | Notification type. Value: `payment_token`                    |
-| `event`        | One of: `NEW`, `MATCH`, `CONFLICT`                            |
-| `tokenid`      | ID of the generated payment token                             |
-| `token_expiry_date` | Expiration date of the token                                |
-| `cardcd`       | Masked card number                                            |
-| `card_scheme`  | Card scheme, e.g., VISA, MASTERCARD                           |
-| `respcd`       | Response code, `0000` = success                               |
-| `respmsg`      | Message, e.g., "success"                                     |
-| `sysdtm`       | System timestamp of the event                                 |
-| `customer_id`  | Customer ID if linked                                        |
-| `token_reason` | Reason for tokenisation                                       |
-| `token_reference` | Token reference in system                                    |
+| 欄位名稱                | 說明                              |
+| ------------------- | ------------------------------- |
+| `userid`            | QFPay 門店 ID                     |
+| `notify_type`       | 通知類型，固定為 `payment_token`        |
+| `event`             | 令牌事件類型：`NEW`、`MATCH`、`CONFLICT` |
+| `tokenid`           | 建立完成的支付令牌 ID                    |
+| `token_expiry_date` | 支付令牌的到期時間                       |
+| `cardcd`            | 遮罩後的卡號                          |
+| `card_scheme`       | 卡組織，例如 VISA、MASTERCARD          |
+| `respcd`            | 回應碼，`0000` 表示成功                 |
+| `respmsg`           | 回應訊息，例如 `success`               |
+| `sysdtm`            | 事件發生的系統時間                       |
+| `customer_id`       | 若已關聯，則為對應的 Customer ID          |
+| `token_reason`      | 令牌化原因                           |
+| `token_reference`   | 系統內部的令牌參考值                      |
 
-### Example
+### 範例
 
 ```json
 {
@@ -65,20 +68,21 @@ Triggered after a payment token is created via Element SDK.
 
 ---
 
-## Subscription Status Change
+## 訂閱狀態變更通知
 
-Sent when the status of a subscription changes.
+當訂閱狀態發生變更時，系統會發送此通知。
 
-### Notification Fields
+### 通知欄位說明
 
-| Field              | Description                                                             |
-|-------------------|-------------------------------------------------------------------------|
-| `notify_type`      | Notification type. Value: `subscription`                                |
-| `subscription_id`  | ID of the subscription object                                           |
-| `state`            | Current subscription state (e.g., `ACTIVE`, `COMPLETED`, `INCOMPLETE`) |
-| `sysdtm`           | System timestamp of the status change                                   |
+| 欄位名稱              | 說明                                          |
+| ----------------- | ------------------------------------------- |
+| `notify_type`     | 通知類型，固定為 `subscription`                     |
+| `subscription_id` | 訂閱物件的唯一識別碼                                  |
+| `state`           | 訂閱目前狀態（如 `ACTIVE`、`COMPLETED`、`INCOMPLETE`） |
+| `sysdtm`          | 狀態變更的系統時間                                   |
 
-### Example
+
+### 範例
 
 ```json
 {
@@ -91,30 +95,31 @@ Sent when the status of a subscription changes.
 
 ---
 
-## Subscription Payment Result
+## 訂閱扣款結果通知（Subscription Payment Result）
 
-Sent when a billing attempt occurs (either success or failure).
+每次定期扣款嘗試（成功或失敗）後，系統都會發送此通知。
 
-### Notification Fields
+### 通知欄位說明
 
-| Field                  | Description                                                                                   |
-|------------------------|-----------------------------------------------------------------------------------------------|
-| `notify_type`          | Notification type. Value: `subscription_payment`                                              |
-| `subscription_id`      | Subscription ID                                                                               |
-| `subscription_order_id`| Billing order ID, format: `sub_ord_{subscription_id}_{0001}`                                 |
-| `respcd`               | Response code. `0000` = success                                                               |
-| `respmsg`              | Response message                                                                              |
-| `syssn`                | System transaction ID                                                                         |
-| `txdtm`                | Transaction timestamp                                                                         |
-| `txamt`                | Transaction amount                                                                            |
-| `txcurrcd`             | Currency                                                                                      |
-| `customer_id`          | Customer ID                                                                                   |
-| `product_id`           | Product ID(s), comma-separated if multiple                                                    |
-| `cardcd`               | Masked card number                                                                            |
-| `card_scheme`          | Card scheme, shown only if success                                                            |
-| `current_iteration`    | Billing iteration number                                                                      |
+| 欄位名稱                    | 說明                                             |
+| ----------------------- | ---------------------------------------------- |
+| `notify_type`           | 通知類型，固定為 `subscription_payment`                |
+| `subscription_id`       | 訂閱 ID                                          |
+| `subscription_order_id` | 扣款訂單 ID，格式為 `sub_ord_{subscription_id}_{0001}` |
+| `respcd`                | 回應碼，`0000` 表示成功                                |
+| `respmsg`               | 回應訊息                                           |
+| `syssn`                 | 系統交易流水號                                        |
+| `txdtm`                 | 交易時間                                           |
+| `txamt`                 | 交易金額                                           |
+| `txcurrcd`              | 交易幣別                                           |
+| `customer_id`           | Customer ID                                    |
+| `product_id`            | Product ID，多筆時以逗號分隔                            |
+| `cardcd`                | 遮罩後卡號                                          |
+| `card_scheme`           | 卡組織（僅在成功時提供）                                   |
+| `current_iteration`     | 此訂閱目前的扣款次數                                     |
 
-### Example
+
+### 範例
 
 ```json
 {
@@ -137,12 +142,13 @@ Sent when a billing attempt occurs (either success or failure).
 
 ---
 
-## Retry Logic & Idempotency
+## 範例
 
 :::tip
-Ensure your webhook receiver is idempotent. The same notification may be sent multiple times in the case of delivery failure.
+請確保您的 Webhook 接收端具備**冪等性（Idempotency）**設計。
+在通知傳送失敗時，相同事件可能會被重複發送。
 :::
 
-If the receiving server does not respond with HTTP 200 OK, the message will be retried.
+若接收端未回傳 **HTTP 200 OK**，系統將自動重試通知。
 
-Retries use an exponential backoff strategy, but maximum retries may be subject to internal configuration.
+重試採用 **指數退避（Exponential Backoff）** 機制，實際最大重試次數可能依內部設定而有所調整。
