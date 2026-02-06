@@ -179,7 +179,7 @@
             "tab": "對接指南",
             "groups": [
               {
-                "group": "準備事項",
+                "group": "整合指南",
                 "pages": [
                   "zh-hant/integration/preparation/introduction",
                   "zh-hant/integration/preparation/environments"
@@ -200,6 +200,16 @@
               {
                 "group": "實體店支付",
                 "pages": []
+              },
+              {
+                "group": "共用端點",
+                "pages": [
+                  "zh-hant/integration/common-api/01-transaction-enquiry",
+                  "zh-hant/integration/common-api/02-reversal",
+                  "zh-hant/integration/common-api/03-refund",
+                  "zh-hant/integration/common-api/04-async-notifications",
+                  "zh-hant/integration/common-api/05-transaction-note"
+                ]
               }
             ]
           }
