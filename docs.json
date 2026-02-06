@@ -73,8 +73,8 @@
                   {
                     "group": "POS API",
                     "pages": [
-                      "integration/in-store/pos-api/ecr",
-                      "integration/in-store/pos-api/app-call-app"
+                      "integration/en/in-store/pos-api/app-call-app",
+                      "integration/en/in-store/pos-api/app-call-app"
                     ]
                   },
                   "integration/in-store/CPM",
@@ -87,8 +87,8 @@
                   {
                     "group": "Checkout Integration",
                     "pages": [
-                      "integration/online-shop/checkout-integration/01-checkout",
-                      "integration/online-shop/checkout-integration/02-payment-element"
+                      "integration/en/online-shop/checkout-integration/01-checkout",
+                      "integration/en/online-shop/checkout-integration/02-payment-element"
                     ]
                   },
                   {
@@ -97,30 +97,30 @@
                       {
                         "group": "Alipay",
                         "pages": [
-                          "integration/online-shop/integration-by-payment-type/alipay/alipay-in-app",
-                          "integration/online-shop/integration-by-payment-type/alipay/alipay-wap-h5-payments",
-                          "integration/online-shop/integration-by-payment-type/alipay/alipay-web-payments"
+                          "integration/en/online-shop/integration-by-payment-type/alipay/alipay-in-app",
+                          "integration/en/online-shop/integration-by-payment-type/alipay/alipay-wap-h5-payments",
+                          "integration/en/online-shop/integration-by-payment-type/alipay/alipay-web-payments"
                         ]
                       },
                       {
                         "group": "FPS",
                         "pages": [
-                          "integration/online-shop/integration-by-payment-type/fps/fps-app-call-app",
-                          "integration/online-shop/integration-by-payment-type/fps/fps-ecert-setup"
+                          "integration/en/online-shop/integration-by-payment-type/fps/fps-app-call-app",
+                          "integration/en/online-shop/integration-by-payment-type/fps/fps-ecert-setup"
                         ]
                       },
                       {
                         "group": "Wechat",
                         "pages": [
-                          "integration/online-shop/integration-by-payment-type/wechat/wechat-in-app-payments",
-                          "integration/online-shop/integration-by-payment-type/wechat/wechat-jsapi-payment",
-                          "integration/online-shop/integration-by-payment-type/wechat/wechat-mini-programs",
-                          "integration/online-shop/integration-by-payment-type/wechat/wechat-pay-h5",
-                          "integration/online-shop/integration-by-payment-type/wechat/wechat-web-qr-payment"
+                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-in-app-payments",
+                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-jsapi-payment",
+                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-mini-programs",
+                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-pay-h5",
+                          "integration/en/online-shop/integration-by-payment-type/wechat/wechat-web-qr-payment"
                         ]
                       },
-                      "integration/online-shop/integration-by-payment-type/05-visa-master-online-payment",
-                      "integration/online-shop/integration-by-payment-type/06-applepay"
+                      "integration/en/online-shop/integration-by-payment-type/05-visa-master-online-payment",
+                      "integration/en/online-shop/integration-by-payment-type/06-applepay"
                     ]
                   },
                   {
