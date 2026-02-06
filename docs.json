@@ -257,7 +257,14 @@
                   },
                   {
                     "group": "按支付場景整合",
-                    "pages": []
+                    "pages": [
+                      {
+                        "group": "定期付款",
+                        "pages": [
+                          "zh-hant/integration/online-shop/integration-by-use-case/recurring-payments/01-recurring-overview"
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
