@@ -1,10 +1,12 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
+---
+title: "WeChat Mini Programs"
+---
 
 # WeChat Mini Programs
 
-<Link href="https://sdk.qfapi.com/images/wechat_mp_process.jpg" target="_blank">![WeChat MiniProgram process-flow](@site/static/img/wechat_mp_process.jpg)</Link>
+<Link href="https://sdk.qfapi.com/images/wechat_mp_process.jpg" target="_blank">
+  ![WeChat MiniProgram process-flow](@site/static/img/wechat_mp_process.jpg)
+</Link>
 
 ## HTTP Request
 
@@ -14,14 +16,11 @@ import Link from '@docusaurus/Link';
 
 **PayType** : `800213`
 
-**Step 1:** WeChat real name authentification
-Before the payment function within WeChat can be used the business personnel must authenticate themselves on the official WeChat platform.
+**Step 1:** WeChat real name authentification Before the payment function within WeChat can be used the business personnel must authenticate themselves on the official WeChat platform.
 
-**Step 2:** Get openid
-Once real name authentication has been completed, the openid parameter is obtained through the small program of the real name of the merchant. The specific acquisition method is described in the [Wechat documentation](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html).
+**Step 2:** Get openid Once real name authentication has been completed, the openid parameter is obtained through the small program of the real name of the merchant. The specific acquisition method is described in the [Wechat documentation](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html).
 
-**Step 3:** Send payment request
-Initiate a payment request with the parameters below.
+**Step 3:** Send payment request Initiate a payment request with the parameters below.
 
 Optionally merchants can activate real-name authentication with WeChat. Currently real-name identification is only available for Mainland Chinese citizens and include a person's real name and national ID card number. In case identification is provided the payer's wallet information like a connected bank card must be identical with the data provided by merchants. If customers did not yet bind their WeChat account to a bank card the payment will go through regardless.
 
@@ -114,6 +113,7 @@ qfPayOpenAPI: function () {
 |—    |`paySign`  |String(64) |Signature |
 |`txcurrcd`|  | |Transaction currency. View the [Currencies](/docs/preparation/paycode#currencies) table for a complete list of available currencies |
 
+
 **Step 4:** Evoke the payment module
 
 ```plaintext
@@ -136,19 +136,19 @@ weChatPayment: function(res) {
 },
 ```
 
-Obtain the `pay_params` parameter, and then provide payment details accordingly. For more details, please refer to the
-[Wechat documentation](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5).
+Obtain the `pay_params` parameter, and then provide payment details accordingly. For more details, please refer to the [Wechat documentation](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5).
 
 ## WeChat Mini Program Boilerplate
 
 To get started quickly, download the [QFPay WeChat Mini Program Boilerplate](@site/static/files/qfpay_mini_program_payments_boilerplate.zip) and get access to the MD5 hash algorithm.
 
-<Link href="/img/miniprogram_boilerplate.png" target="_blank">![WeChat Mini Program Boilerplate](@site/static/img/miniprogram_boilerplate.png)</Link>
+<Link href="/img/miniprogram_boilerplate.png" target="_blank">
+  ![WeChat Mini Program Boilerplate](@site/static/img/miniprogram_boilerplate.png)
+</Link>
 
 ### Setup Instructions
 
-1) Sign up with QFPay and we bind your WeChat appid to your API credentials.
-2) Visit the WeChat MP portal at [https://mp.weixin.qq.com](https://mp.weixin.qq.com) and whitelist our environment for incoming server traffic:
-开发 -> 开发设置 -> 服务器域名 -> request合法域名: e.g. `https://test-openapi-hk.qfapi.com`
-3) Copy and paste the files from the zip file to your local harddrive and setup a cloudfunction environment.
-4) Obtain the user openid with the cloudfunction "getUserOpenID" and run the API calls accroding to the code.
+1. Sign up with QFPay and we bind your WeChat appid to your API credentials.
+2. Visit the WeChat MP portal at https://mp.weixin.qq.com and whitelist our environment for incoming server traffic: 开发 -\> 开发设置 -\> 服务器域名 -\> request合法域名: e.g. `https://test-openapi-hk.qfapi.com`
+3. Copy and paste the files from the zip file to your local harddrive and setup a cloudfunction environment.
+4. Obtain the user openid with the cloudfunction "getUserOpenID" and run the API calls accroding to the code.
