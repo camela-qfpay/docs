@@ -50,7 +50,8 @@
           },
           {
             "tab": "Integration",
-            "groups": [
+            "pages": [
+              "page",
               {
                 "group": "Preparation",
                 "pages": [
