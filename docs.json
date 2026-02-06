@@ -92,7 +92,7 @@
               {
                 "group": "準備事項",
                 "pages": [
-                  "integration/preparation/zh-hant/file",
+                  "integration/preparation/zh-hant/introduction",
                   "integration/preparation/zh-hant/environments"
                 ]
               },
