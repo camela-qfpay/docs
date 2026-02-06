@@ -258,6 +258,10 @@
                   {
                     "group": "按支付場景整合",
                     "pages": [
+                      "zh-hant/integration/online-shop/integration-by-use-case/02-wap-payment",
+                      "zh-hant/integration/online-shop/integration-by-use-case/03-in-app-payment",
+                      "zh-hant/integration/online-shop/integration-by-use-case/01-web-payment",
+                      "zh-hant/integration/online-shop/integration-by-use-case/04-preauth",
                       {
                         "group": "定期付款",
                         "pages": [
