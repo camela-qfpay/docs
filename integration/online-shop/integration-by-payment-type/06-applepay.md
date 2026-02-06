@@ -2,8 +2,6 @@
 title: "Apple Pay Support"
 ---
 
-# Apple Pay Support
-
 ## Introduction
 
 QFPay Checkout and Payment Element SDK both support Apple Pay as an embedded payment option. Merchants must first enable this payment method in the QFPay backend before customers can use it. Apple Pay helps improve authorisation rates and streamlines the checkout experience on Apple-supported devices.

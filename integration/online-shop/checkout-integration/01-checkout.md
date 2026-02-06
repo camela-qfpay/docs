@@ -1,8 +1,6 @@
 ---
-title: "checkout"
+title: "Hosted Checkout Page"
 ---
-
-# Hosted Checkout Page
 
 ## Introduction
 

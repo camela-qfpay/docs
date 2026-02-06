@@ -2,8 +2,6 @@
 title: "Visa / Mastercard Online Payments"
 ---
 
-# Visa / Mastercard Online Payments
-
 This page provides integration guidance for online credit card payments using Visa and Mastercard. Our solution currently supports credit card payments in the [Hong Kong environment](/docs/preparation/environments), covering all major card issuers.
 
 ---

@@ -273,9 +273,12 @@ const paymentResponse = qfpay.confirmPayment({
 
 **Response Code Interpretation:**
 
-<table style="min-width: 75px">
-<colgroup><col style="min-width: 25px"><col style="min-width: 25px"><col style="min-width: 25px"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p>Code</p></th><th colspan="1" rowspan="1"><p>Meaning</p></th><th colspan="1" rowspan="1"><p>Note</p></th></tr><tr><td colspan="1" rowspan="1"><p>0000</p></td><td colspan="1" rowspan="1"><p>Payment Success</p></td></tr><tr><td colspan="1" rowspan="1"><p>1111</p></td><td colspan="1" rowspan="1"><p>Cancelled (Apple Pay)</p></td><td colspan="1" rowspan="1"><p>Applicable to Apple Pay only</p></td></tr><tr><td colspan="1" rowspan="1"><p>other</p></td><td colspan="1" rowspan="1"><p>Payment Failed</p></td><td colspan="1" rowspan="1"><p>See <code spellcheck="false">description</code> field</p></td></tr></tbody>
-</table>
+| Code | Meaning | Note |
+| --- | --- | --- |
+| 0000 | Payment Success | |
+| 1111 | Cancelled (Apple Pay) | Applicable to Apple Pay only |
+| other | Payment Failed | See `description` field |
+
 
 #### Confirm Multi-Wallet Payment
 
