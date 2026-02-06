@@ -1,0 +1,51 @@
+---
+id: request-format
+title: Request Format
+sidebar_label: Request Format
+---
+
+### HTTP Request
+
+`POST ../trade/v1/payment`
+
+Listed below are the most common parameters for the payment endpoint. Please refer to the payment scenario applicable to you for additional parameters.
+
+---
+
+### Public Payment Request Parameters
+
+| Attribute       | Mandatory           | Type         | Description                                                                                                |
+| ---------------- | --------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `txamt`         | Yes                 | Int(11)      | Amount of the transaction. Unit in cents (i.e. 100 = $1). Suggest value > 200 to avoid risk control.|
+| `txcurrcd`      | Yes                 | String(3)    | Transaction currency. View the [Currencies](./currencies.md) table for a complete list of available currencies|
+| `pay_type`      | Yes                 | String(6)    | Please refer to the section [Payment Types](./paytypes.md) for a complete list of payment types|
+| `out_trade_no`  | Yes                 | String(128)  | External transaction number / Merchant platform transaction number: This parameter must be unique for each payment and refund request under the same merchant account in the system.|
+| `txdtm`         | Yes                 | String(20)   | Transaction time format：<br/> YYYY-MM-DD hh:mm:ss|
+| `auth_code`     | Yes<br/>(CPM only)  | String(128)  | Specifies the authorisation code for scanning a barcode/QR Code. Each `auth_code` can be used only once and expires within one day. For testing CPM with Alipay or WeChat Pay, the `auth_code` can be extracted from the consumer wallet or scanned from the barcode manually.|
+| `expired_time`  | No<br/>(MPM only)   | String(3)    | QRC expiration time in minutes. Default: 30 mins. Minimum: 5 mins, Maximum: 120 mins. <br/>Available for: <br/>800201, 800101, 801512, 801501, 801107, 801101, 801010, 801510|
+| `goods_name`    | No                  | String(64)   | Goods name or item description. Cannot exceed 20 alphanumeric characters or contain special characters. Must be UTF-8 encoded if in Chinese. Required for App payments.|
+| `mchid`         | No                  | String(16)   | May or may not be given to merchant. <br/>**If `mchid` is assigned**, it is mandatory to provide it in API requests.<br/>**If `mchid` is not assigned**, it must not be included in the request.|
+| `udid`          | No                  | String(40)   | Unique device ID. Used for internal transaction tracking.|
+| `notify_url`    | No                  | String(256)  | URL to receive asynchronous notifications once payment is completed.|
+
+---
+
+### Signature Requirement
+
+For instructions on how to generate a valid signature, refer to [Signature Generation](./signature-generation.md).
+
+### Request Description
+
+| Field        | Description                                        |
+| ------------ | -------------------------------------------------- |
+| Character    | `UTF-8`                                            |
+| Method       | **POST/ GET** (Depends on individual API function) |
+| Content-type | `application/x-www-form-urlencoded`                |
+
+### Required Parameter Settings in HTTP Header to Request the API
+
+| Field           | Mandatory | Description                                                                                                                                                                                   |
+| --------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `X-QF-APPCODE`  | Yes       | App code assigned to the merchant                                                                                                                                                             |
+| `X-QF-SIGN`     | Yes       | Signature generated according to the signature formulation method described above                                                                                                             |
+| `X-QF-SIGNTYPE` | No        | Signature algorithm used to generate the signature. If SHA256 is used, the developer must pass the value as `SHA256`. The default value is `MD5` in case this field is not passed to the API. |

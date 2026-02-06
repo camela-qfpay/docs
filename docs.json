@@ -35,13 +35,25 @@
             ]
           },
           {
-            "tab": "API Reference",
+            "tab": "Integration",
             "groups": [
               {
                 "group": "Preparation",
                 "pages": [
                   "integration/preparation/introduction",
                   "integration/preparation/environments"
+                ]
+              },
+              {
+                "group": "API Reference",
+                "pages": [
+                  "api-reference/request-format",
+                  "api-reference/response-format",
+                  "api-reference/signature-generation",
+                  "api-reference/paytypes",
+                  "api-reference/currencies",
+                  "api-reference/status-codes",
+                  "api-reference/api-usage-guidelines"
                 ]
               }
             ]

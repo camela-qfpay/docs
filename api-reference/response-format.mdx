@@ -1,0 +1,60 @@
+---
+id: response-format
+title: Response Format
+sidebar_label: Response Format
+---
+
+### API Response Format
+
+All QFPay APIs return JSON-formatted responses. A standard successful response will follow the structure below:
+
+```json
+{
+  "respcd": "0000",
+  "respmsg": "success",
+  "data": {
+    "txamt": "100",
+    "out_trade_no": "20231101000001",
+    "txcurrcd": "HKD",
+    "txstatus": "SUCCESS",
+    "qf_trade_no": "9000020231101000001",
+    "pay_type": "800101",
+    "txdtm": "2023-11-01 10:00:00"
+  }
+}
+```
+
+### Field Description
+
+| Field         | Type        | Description                                                                 |
+| ------------- | ----------- | --------------------------------------------------------------------------- |
+| `respcd`      | String(4)   | Return code. `"0000"` means success. Other codes indicate failure.         |
+| `respmsg`     | String(64)  | Message description of the `respcd` value.                                 |
+| `data`        | Object      | Contains payment transaction data. See details below.                      |
+
+#### `data` Object
+
+| Field           | Type        | Description                                                            |
+|-----------------|-------------|------------------------------------------------------------------------|
+| `txamt`         | String      | Transaction amount (in cents)                                          |
+| `out_trade_no`  | String      | Merchant's original order number                                       |
+| `txcurrcd`      | String      | Currency code (e.g. HKD)                                               |
+| `txstatus`      | String      | Payment status: `SUCCESS`, `FAILED`, `PENDING`                         |
+| `qf_trade_no`   | String      | Unique transaction number assigned by QFPay                            |
+| `pay_type`      | String      | Payment method code                                                    |
+| `txdtm`         | String      | Payment time (format: `YYYY-MM-DD HH:mm:ss`)                           |
+
+### Signature Verification
+
+<Note>
+In critical integrations, developers are encouraged to verify the response signature (if present in headers) to ensure data integrity.
+</Note>
+
+The response may also include the `X-QF-SIGN` and `X-QF-SIGNTYPE` headers, which can be validated by:
+
+1. Extracting the `data` fields in the same sorted order.
+2. Concatenating them into a string with format: `key1=value1&key2=value2&...`
+3. Appending the client key.
+4. Generating the MD5 hash and comparing it to the received signature.
+
+For the full logic to generate and verify the signature, refer to [Signature Generation](./signature-generation.md).
