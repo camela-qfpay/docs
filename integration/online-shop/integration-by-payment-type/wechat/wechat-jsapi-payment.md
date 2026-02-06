@@ -307,17 +307,17 @@ After receiving `pay_params` redirect the user to the WeChat payment module to c
 
 | Parameter | Required | Type | Description |
 |----------|----------|------|------|
-| `mchntnm` | 是 | String(128) | Merchant display name shown on the payment page. UTF-8 encoding required for non-ASCII characters. |
-| `txamt` | 是 | Int(11) | URL to redirect the user after payment. Must be URL-encoded. |
-| `currency` | 是 | String(3) | URL to redirect the user after payment. Must be URL-encoded. |
-| `goods_name` | 否 | String(64) | URL to redirect the user after payment. Must be URL-encoded. |
-| `redirect_url` | 是 | String(512) | URL to redirect the user after payment. Must be URL-encoded. |
-| `package` | 是 | String(128) | Value returned in `pay_params`. |
-| `timeStamp` | 是 | String(32) | Value returned in `pay_params`. |
-| `signType` | 是 | String(32) | Value returned in `pay_params`. |
-| `paySign` | 是 | String(64) | Value returned in `pay_params`. |
-| `appId` | 是 | String(16) | Value returned in `pay_params`. |
-| `nonceStr` | 是 | String(32) | Value returned in `pay_params`. |
+| `mchntnm` | Yes | String(128) | Merchant display name shown on the payment page. UTF-8 encoding required for non-ASCII characters. |
+| `txamt` | Yes | Int(11) | URL to redirect the user after payment. Must be URL-encoded. |
+| `currency` | Yes | String(3) | URL to redirect the user after payment. Must be URL-encoded. |
+| `goods_name` | No | String(64) | URL to redirect the user after payment. Must be URL-encoded. |
+| `redirect_url` | Yes | String(512) | URL to redirect the user after payment. Must be URL-encoded. |
+| `package` | Yes | String(128) | Value returned in `pay_params`. |
+| `timeStamp` | Yes | String(32) | Value returned in `pay_params`. |
+| `signType` | Yes | String(32) | Value returned in `pay_params`. |
+| `paySign` | Yes | String(64) | Value returned in `pay_params`. |
+| `appId` | Yes | String(16) | Value returned in `pay_params`. |
+| `nonceStr` | Yes | String(32) | Value returned in `pay_params`. |
 
 :::note
 This request is sent directly from the user’s browser.

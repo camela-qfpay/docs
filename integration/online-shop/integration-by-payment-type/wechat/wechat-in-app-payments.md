@@ -1,19 +1,13 @@
 ---
-id: wechat-in-app-payments
-title: WeChat In-App Payments (Native App)
-description: This document explains how to integrate WeChat In-App payments using the official SDK within iOS or Android apps.
-sidebar_label: WeChat In-App Payment
+id: "wechat-in-app-payments"
+title: "WeChat In-App Payments (Native App)"
+description: "This document explains how to integrate WeChat In-App payments using the official SDK within iOS or Android apps."
+sidebar_label: "WeChat In-App Payment"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
-
-# WeChat In-App Payments (Native App)
-
-<Link href="/img/wechat-in-app.png" target="_blank">![WeChat App Payment Flow](@site/static/img/wechat-in-app.png)</Link>
-
-WeChat In-App Payment is designed for **native mobile apps (iOS / Android)**. This method allows users to complete payments directly within the app using the official WeChat SDK.
+<Link href="/img/wechat-in-app.png" target="_blank">
+  WeChat In-App Payment is designed for **native mobile apps (iOS / Android)**. This method allows users to complete payments directly within the app using the official WeChat SDK.
+</Link>
 
 ---
 
@@ -21,9 +15,9 @@ WeChat In-App Payment is designed for **native mobile apps (iOS / Android)**. Th
 
 To use WeChat In-App payments, merchants must:
 
-* Register an account on the **WeChat Open Platform**
-* Create an App and obtain the corresponding **AppID**
-* Complete all WeChat approval processes
+- Register an account on the **WeChat Open Platform**
+- Create an App and obtain the corresponding **AppID**
+- Complete all WeChat approval processes
 
 More details: [WeChat Official In-App Payment Guide](https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter6_2.shtml#menu1)
 
@@ -33,10 +27,10 @@ More details: [WeChat Official In-App Payment Guide](https://pay.weixin.qq.com/w
 
 Merchants may choose to enable **real-name verification**.
 
-* Applies to Mainland China citizens only
-* The user's WeChat Wallet (e.g., linked bank card) must match the submitted identity information
-* Users can still pay without a linked bank card
-* This feature depends on the merchant account and PayType support
+- Applies to Mainland China citizens only
+- The user's WeChat Wallet (e.g., linked bank card) must match the submitted identity information
+- Users can still pay without a linked bank card
+- This feature depends on the merchant account and PayType support
 
 ---
 
@@ -50,9 +44,9 @@ You can download the official SDK from the [WeChat SDK Download Page](https://de
 
 ### HTTP Request
 
-* **Method**: `POST`
-* **Endpoint**: `/trade/v1/payment`
-* **PayType**: `800210`
+- **Method**: `POST`
+- **Endpoint**: `/trade/v1/payment`
+- **PayType**: `800210`
 
 ### Request Parameters
 
@@ -60,7 +54,7 @@ You can download the official SDK from the [WeChat SDK Download Page](https://de
 | ----------------- | -------------- | -------- | --------- | ------------------------------------------------------------------ |
 | Merchant ID       | `mchid`        | No       | String    | Unique merchant ID assigned by QFPay                               |
 | External Order ID | `out_trade_no` | Yes      | String    | Unique transaction ID within merchant system                       |
-| Amount            | `txamt`        | Yes      | Int       | Amount in cents. Suggested: > 200 to avoid risk flags              |
+| Amount            | `txamt`        | Yes      | Int       | Amount in cents. Suggested: \> 200 to avoid risk flags             |
 | Currency          | `txcurrcd`     | Yes      | String(3) | Currency code. See [Currency List](/docs/api-reference/currencies) |
 | RMB Tag           | `rmb_tag`      | No       | String(1) | Use `rmb_tag=Y` and `txcurrcd=CNY` to indicate RMB transaction     |
 | Transaction Time  | `txdtm`        | Yes      | String    | Format: `YYYY-MM-DD hh:mm:ss`                                      |
@@ -68,19 +62,19 @@ You can download the official SDK from the [WeChat SDK Download Page](https://de
 | Return URL        | `return_url`   | No       | String    | Redirect URL after payment (required for some channels)            |
 | Real-name Info    | `extend_info`  | No       | Object    | Required only for Mainland China real-name flows                   |
 
-:::note
-`extend_info` detailed format
+:::note `extend_info` detailed format
 
 If you need to submit real‑name verification information for users in Mainland China, please use the following format:
+
 ```json
 {
   "user_creid": "430067798868676871",
   "user_truename": "\u5c0f\u6797"
 }
 ```
+
 - `user_creid` contains the consumer’s **Mainland China ID card number**
-- `user_truename` must contain the payer’s **real name**, provided either as **Unicode‑encoded text** or **Chinese characters**
-:::
+- `user_truename` must contain the payer’s **real name**, provided either as **Unicode‑encoded text** or **Chinese characters** :::
 
 ### Sample Request (JSON format)
 
@@ -155,19 +149,19 @@ After receiving `pay_params`, pass the values into the WeChat SDK according to [
 
 Ensure the parameters are mapped correctly:
 
-* `appid`
-* `partnerid`
-* `prepayid`
-* `package`
-* `noncestr`
-* `timestamp`
-* `sign`
+- `appid`
+- `partnerid`
+- `prepayid`
+- `package`
+- `noncestr`
+- `timestamp`
+- `sign`
 
 ---
 
 ## Summary
 
-* This payment method is for **native app integrations only**
-* Requires prior WeChat platform registration and AppID approval
-* All payment handling is passed to the official SDK
-* For final transaction status confirmation, use the [Transaction Enquiry API](/docs/common-api/transaction-enquiry)
+- This payment method is for **native app integrations only**
+- Requires prior WeChat platform registration and AppID approval
+- All payment handling is passed to the official SDK
+- For final transaction status confirmation, use the [Transaction Enquiry API](/docs/common-api/transaction-enquiry)
