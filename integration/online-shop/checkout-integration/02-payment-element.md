@@ -1,5 +1,5 @@
 ---
-title: "payment-element"
+title: "Element SDK"
 ---
 
 # Element SDK
