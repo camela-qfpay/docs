@@ -46,7 +46,10 @@
               },
               {
                 "group": "API Reference",
-                "pages": []
+                "pages": [
+                  "integration/api-reference/request-format",
+                  "integration/api-reference/response-format"
+                ]
               },
               {
                 "group": "In-Store Payments",
