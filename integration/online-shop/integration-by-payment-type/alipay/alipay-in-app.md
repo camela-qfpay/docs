@@ -73,9 +73,31 @@ txamt=1
 
 These fields are returned by QFPay and should be passed into the Alipay SDK.
 
-<table style="min-width: 75px">
-<colgroup><col style="min-width: 25px"><col style="min-width: 25px"><col style="min-width: 25px"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p>Parameter Key</p></th><th colspan="1" rowspan="1"><p>Sub Parameter Key</p></th><th colspan="1" rowspan="1"><p>Description</p></th></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">pay_params</code></p></td><td colspan="1" rowspan="1"><p><code spellcheck="false">partner</code></p></td><td colspan="1" rowspan="1"><p>Partner ID</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">seller_id</code></p></td><td colspan="1" rowspan="1"><p>Unique Alipay user ID of the receiving account</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">subject</code></p></td><td colspan="1" rowspan="1"><p>Product title / trade title / order title</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">body</code></p></td><td colspan="1" rowspan="1"><p>Detailed description of the transaction. For multiple items, concatenate descriptions into this field</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">total_fee</code></p></td><td colspan="1" rowspan="1"><p>Total order amount</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">notify_url</code></p></td><td colspan="1" rowspan="1"><p>Notification callback URL</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">service</code></p></td><td colspan="1" rowspan="1"><p>Service name</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">cardcd</code></p></td><td colspan="1" rowspan="1"><p>Card number</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">payment_type</code></p></td><td colspan="1" rowspan="1"><p>Payment type</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">_input_charset</code></p></td><td colspan="1" rowspan="1"><p>Character encoding format</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">it_b_pay</code></p></td><td colspan="1" rowspan="1"><p>Custom timeout parameter</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">return_url</code></p></td><td colspan="1" rowspan="1"><p>Redirect URL after payment</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">payment_inst</code></p></td><td colspan="1" rowspan="1"><p>Payment institution</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">currency</code></p></td><td colspan="1" rowspan="1"><p>Currency code</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">product_code</code></p></td><td colspan="1" rowspan="1"><p>Product code</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">sign</code></p></td><td colspan="1" rowspan="1"><p>RSA signature (Required)</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">sign_type</code></p></td><td colspan="1" rowspan="1"><p>Signature type</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">secondary_merchant_id</code></p></td><td colspan="1" rowspan="1"><p>Secondary merchant ID</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">secondary_merchant_name</code></p></td><td colspan="1" rowspan="1"><p>Secondary merchant name</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">secondary_merchant_industry</code></p></td><td colspan="1" rowspan="1"><p>Secondary merchant industry</p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">chnlsn</code></p></td><td colspan="1" rowspan="1"><p>Channel transaction number</p></td></tr><tr><td colspan="1" rowspan="1"><p>Common Response Parameters</p></td><td colspan="1" rowspan="1"><p>—</p></td><td colspan="1" rowspan="1"><p>—</p></td></tr></tbody>
-</table>
+| Parameter Key  | Sub Parameter Key               | Description                                      |
+|----------------|----------------------------------|--------------------------------------------------|
+| `pay_params`   | `partner`                        | Partner ID                                       |
+|                | `seller_id`                      | Unique Alipay user ID of the receiving account  |
+|                | `subject`                        | Product title / trade title / order title        |
+|                | `body`                           | Detailed description of the transaction. For multiple items, concatenate descriptions into this field |
+|                | `total_fee`                      | Total order amount                               |
+|                | `notify_url`                     | Notification callback URL                       |
+|                | `service`                        | Service name                                    |
+|                | `cardcd`                         | Card number                                     |
+|                | `payment_type`                   | Payment type                                    |
+|                | `_input_charset`                | Character encoding format                      |
+|                | `it_b_pay`                       | Custom timeout parameter                       |
+|                | `return_url`                     | Redirect URL after payment                     |
+|                | `payment_inst`                   | Payment institution                            |
+|                | `currency`                       | Currency code                                  |
+|                | `product_code`                   | Product code                                   |
+|                | `sign`                           | RSA signature (Required)                      |
+|                | `sign_type`                      | Signature type                                 |
+|                | `secondary_merchant_id`          | Secondary merchant ID                          |
+|                | `secondary_merchant_name`        | Secondary merchant name                        |
+|                | `secondary_merchant_industry`    | Secondary merchant industry                    |
+| `chnlsn`       |                                  | Channel transaction number                     |
+| Common Response Parameters | —                        | —                                              |
+
 
 ## Sample QFPay Response
 
